@@ -56,7 +56,7 @@ BuildRequires:	gtk+-devel
 BuildRequires:	perl-XML-Parser
 BuildRequires:	perl-XML-Writer
 BuildRequires:	perl-devel >= 5.005_03-10
-BuildRequires:	rpm-perlprov
+BuildRequires:	rpm-perlprov >= 4.0.2-104
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Provides:	perl(Gtk::TypesLazy)
 Obsoletes:	Gtk-perl
