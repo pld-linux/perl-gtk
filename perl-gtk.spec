@@ -1,18 +1,24 @@
+#
+# TODO: add Applets, Bonobo and maybe Mozilla (but requires API update)
+#
+# Conditional build:
+# _with_gtkhtml		- with Gtk::HTML module (gtkhtml library)
+# _without_applets	- without Gnome::Applet module (gnome-applets libraries) [not done yet]
+# _without_gdkimlib	- without Gtk::Gdk::ImlibImage module (imlib library)
+# _without_gdkpixbuf	- without Gtk::Gdk::Pixbuf module (gdk-pixbuf library)
+# _without_glade	- without Gtk::GladeXML module (libglade library)
+# _without_gnome	- without Gnome module (gnome-libs)
+# _without_gnomeprint	- without Gnome::Print module (gnome-print library)
+# _without_gtkglarea	- without Gtk::GLArea module (gtkglarea library)
+# _without_gtkxmhtml	- without Gtk::XmHTML module (gtkxmhtml library)
+#
+%{?_without_gnome:%define	_without_applets	1}
+%{?_without_gnome:%define	_without_gnomeprint	1}
+# because libgtkxmhtml is not separated from gnome-libs...:
+# _without_gnome: ... _without_gtkxmhtml
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	Gtk
 %define		pnam	Perl
-#
-# Conditional build:
-# _with_gtkhtml
-# _without_gdkimlib
-# _without_gdkpixbuf
-# _without_glade
-# _without_gnome
-# _without_gnomeprint
-# _without_gtkglarea
-# _without_gtkhtml
-#
-%{?_without_gnome:%define	_without_gnomeprint	1}
 Summary:	Perl extensions for Gtk+ (the Gimp ToolKit)
 Summary(cs):	Roz¹íøení Perlu pro Gtk+ (Gimp ToolKit)
 Summary(da):	Perl udvidelser for Gtk+
@@ -30,29 +36,27 @@ Summary(sl):	Perlovske raz¹iritve za Gtk+ (Gimp ToolKit)
 Summary(sv):	Perl-utvidgning för Gtk+ (the Gimp ToolKit)
 Name:		perl-gtk
 Version:	0.7008
-Release:	11
+Release:	11.1
 License:	LGPL
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 Patch0:		%{name}-fix.patch
 URL:		http://www.gtkperl.org/
 BuildRequires:	perl >= 5.005_03-10
-BuildRequires:	gtk+-devel
-%{!?_without_gnome:BuildRequires: gnome-libs-devel}
-BuildRequires:	imlib-devel
-%{!?_without_gdkimlib:BuildRequires: imlib-devel}
-%{!?_without_gtkglarea:BuildRequires: gtkglarea-devel}
 %{!?_without_gdkpixbuf:BuildRequires: gdk-pixbuf-devel}
-%{?_with_gtkhtml:BuildRequires: gtkhtml-devel}
+%{!?_without_gnome:BuildRequires: gnome-libs-devel}
 %{!?_without_gnomeprint:BuildRequires: gnome-print-devel}
+BuildRequires:	gtk+-devel
+%{!?_without_gtkglarea:BuildRequires: gtkglarea-devel}
+%{?_with_gtkhtml:BuildRequires: gtkhtml-devel}
+%{!?_without_gdkimlib:BuildRequires: imlib-devel}
 %{!?_without_glade:BuildRequires: libglade-devel}
 BuildRequires:	perl-XML-Parser
 BuildRequires:	perl-XML-Writer
 BuildRequires:	rpm-perlprov
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+Provides:	perl(Gtk::TypesLazy)
 Obsoletes:	Gtk-perl
-
-%define		_noautoreq "perl(Gtk::TypesLazy)" "perl(Gnome::TypesLazy)" "perl(Gtk::GLArea::Types)" "perl(Gtk::Gdk::Pixbuf::Types)" "perl(Gtk::GladeXML::Types)"
 
 %description
 This package includes Perl extensions for Gtk+ (the Gimp ToolKit), a
@@ -133,6 +137,82 @@ Utvidgningen som tillhandahålls i detta paket låter dig skapa grafiska
 gränssnitt med Perl och Gtk+. Om du installerar detta paket behöver du
 även ha Perl och Gtk+ installerade.
 
+%package Gdk-ImlibImage
+Summary:	Imlib support for perl-gtk
+Summary(pl):	Obs³uga Imlib dla perl-gtk
+Group:		Development/Languages/Perl
+Requires:	%{name} = %{version}
+
+%description Gdk-ImlibImage
+Gtk::Gdk::ImlibImage module - Imlib library support for perl-gtk.
+
+%description Gdk-ImlibImage -l pl
+Modu³ Gtk::Gdk::ImlibImage - obs³uga biblioteki Imlib dla perl-gtk.
+
+%package Gdk-Pixbuf
+Summary:	Gdk-Pixbuf support for perl-gtk
+Summary(pl):	Obs³uga Gdk-Pixbuf dla perl-gtk
+Group:		Development/Languages/Perl
+Requires:	%{name} = %{version}
+Provides:	perl(Gtk::Gdk::Pixbuf::Types)
+
+%description Gdk-Pixbuf
+Gtk::Gdk::Pixbuf module - Gdk-Pixbuf library support for perl-gtk.
+
+%description Gdk-Pixbuf -l pl
+Modu³ Gtk::Gdk::Pixbuf - obs³uga biblioteki Gdk-Pixbuf dla perl-gtk.
+
+%package GLArea
+Summary:	Gtk-GLArea support for perl-gtk
+Summary(pl):	Obs³uga Gtk-GLArea dla perl-gtk
+Group:		Development/Languages/Perl
+Requires:	%{name} = %{version}
+Provides:	perl(Gtk::GLArea::Types)
+
+%description GLArea
+Gtk::GLArea module - Gtk-GLArea library support for perl-gtk.
+
+%description GLArea -l pl
+Modu³ Gtk::GLArea - obs³uga biblioteki Gtk-GLArea dla perl-gtk.
+
+%package GladeXML
+Summary:	libglade support for perl-gtk
+Summary(pl):	Obs³uga libglade dla perl-gtk
+Group:		Development/Languages/Perl
+Requires:	%{name} = %{version}
+Provides:	perl(Gtk::GladeXML::Types)
+
+%description GladeXML
+Gtk::GladeXML module - libglade library support for perl-gtk.
+
+%description GladeXML -l pl
+Modu³ Gtk::GladeXML - obs³uga biblioteki libglade dla perl-gtk.
+
+%package XmHTML
+Summary:	XmHTML support for perl-gtk
+Summary(pl):	Obs³uga XmHTML dla perl-gtk
+Group:		Development/Languages/Perl
+Requires:	%{name} = %{version}
+Provides:	perl(Gtk::XmHTML::Types)
+
+%description XmHTML
+Gtk::XmHTML module - gtkxmhtml library support for perl-gtk.
+
+%description XmHTML -l pl
+Modu³ Gtk::XmHTML - obs³uga biblioteki gtkxmhtml dla perl-gtk.
+
+%package HTML
+Summary:	gtkhtml support for perl-gtk
+Summary(pl):	Obs³uga gtkhtml dla perl-gtk
+Group:		Development/Languages/Perl
+Requires:	%{name} = %{version}
+
+%description HTML
+Gtk::HTML module - gtkhtml library support for perl-gtk.
+
+%description HTML -l pl
+Modu³ Gtk::HTML - obs³uga biblioteki gtkhtml dla perl-gtk.
+
 %package -n perl-gnome
 Summary:	Perl extensions for Gnome
 Summary(cs):	Roz¹íøení Perlu pro Gnome
@@ -151,14 +231,54 @@ Summary(sl):	Perlovske raz¹iritve za Gnome
 Summary(sv):	Perl-utvidgning för Gnome
 Group:		Development/Languages/Perl
 Requires:	%{name} = %{version}
-%{!?_without_gnomeprint:Provides:	perl(Gnome::Print::Types)}
-%{!?_without_gnomeprint:Provides:	perl(Gnome::Print::TypesLazy)}
+Requires:	%{name}-Gdk-ImlibImage = %{version}
+Provides:	perl(Gnome::TypesLazy)
 
 %description -n perl-gnome
 This package includes Perl extensions for Gnome.
 
 %description -n perl-gnome -l pl
 Ten pakiet zawiera rozszerzenia perla dla Gnome.
+
+%package -n perl-gnome-Print
+Summary:	Perl extensions for GnomePrint
+Summary(cs):	Roz¹íøení Perlu pro GnomePrint
+Summary(da):	Perl udvidelser for GnomePrint
+Summary(de):	Perl-Erweiterungen für GnomePrint
+Summary(es):	Extensiones Perl para GnomePrint
+Summary(fr):	Extensions Perl pour GnomePrint
+Summary(it):	Estensioni Perl per GnomePrint
+Summary(ja):	GnomePrint ÍÑ¤Î Perl ³ÈÄ¥
+Summary(no):	Perlmodul for GnomePrint
+Summary(pl):	Rozszerzenie Perl dla GnomePrint
+Summary(pt):	Uma extensão de Perl para o GnomePrint
+Summary(pt_BR):	Extensões Perl para o GnomePrint
+Summary(ru):	òÁÓÛÉÒÅÎÎÁÑ ×ÅÒÓÉÑ Perl ÄÌÑ GnomePrint
+Summary(sl):	Perlovske raz¹iritve za GnomePrint
+Summary(sv):	Perl-utvidgning för GnomePrint
+Group:		Development/Languages/Perl
+Requires:	perl-gnome = %{version}
+Requires:	%{name}-Gdk-Pixbuf = %{version}
+%{!?_without_gnomeprint:Provides:	perl(Gnome::Print::Types)}
+%{!?_without_gnomeprint:Provides:	perl(Gnome::Print::TypesLazy)}
+
+%description -n perl-gnome-Print
+This package includes Perl extensions for GnomePrint.
+
+%description -n perl-gnome-Print -l pl
+Ten pakiet zawiera rozszerzenia perla dla GnomePrint.
+
+%package -n perl-gnome-Applet
+Summary:	applets support for perl-gnome
+Summary(pl):	Obs³uga apletów dla perl-gnome
+Group:		Development/Languages/Perl
+Requires:	perl-gnome = %{version}
+
+%description -n perl-gnome-Applet
+Gnome::Applet module - applets support for perl-gnome.
+
+%description -n perl-gnome-Applet -l pl
+Modu³ Gnome::Applet - obs³uga apletów dla perl-gnome.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
@@ -167,14 +287,15 @@ Ten pakiet zawiera rozszerzenia perla dla Gnome.
 %build
 perl Makefile.PL \
 	--without-guessing \
-	%{?_without_gnome:--without-gnome}%{!?_without_gnome:--with-gnome-force} \
-	%{?_without_gdkimlib:--without-gdkimlib}%{!?_without_gdkimlib:--with-gdkimlib-force} \
-	%{?_without_gtkglarea:--without-gtkglarea}%{!?_without_gtkglarea:--with-gtkglarea-force} \
-	%{?_without_gdkpixbuf:--without-gdkpixbuf}%{!?_without_gdkpixbuf:--with-gdkpixbuf-force} \
-	%{?!_with_gtkhtml:--without-gtkhtml}%{?_with_gtkhtml:--with-gtkhtml-force} \
-	%{?_without_gnomeprint:--without-gnomeprint}%{!?_without_gnomeprint:--with-gnomeprint-force} \
-	%{?_without_glade:--without-glade}%{!?_without_glade:--with-glade-force}
-	#%{?_without_gnome:--without-applets}%{!?_without_gnome:--with-applets-force} \
+%{?_without_gdkpixbuf:	--without-gdkpixbuf}	%{!?_without_gdkpixbuf:	--with-gdkpixbuf-force} \
+%{?_without_gdkimlib:	--without-gdkimlib}	%{!?_without_gdkimlib:	--with-gdkimlib-force} \
+%{?_without_glade:	--without-glade}	%{!?_without_glade:	--with-glade-force} \
+%{?_without_gnome:	--without-gnome}	%{!?_without_gnome:	--with-gnome-force} \
+%{?_without_gnomeprint:	--without-gnomeprint}	%{!?_without_gnomeprint:--with-gnomeprint-force} \
+%{?_without_gtkglarea:	--without-gtkglarea}	%{!?_without_gtkglarea:	--with-gtkglarea-force} \
+%{!?_with_gtkhtml:	--without-gtkhtml}	%{?_with_gtkhtml:	--with-gtkhtml-force} \
+%{?_without_gtkxmhtml:	--without-gtkxmhtml}	%{!?_without_gtkxmhtml:	--with-gtkxmhtml-force}
+#%{?_without_applets:	--without-applets}	%{!?_without_gnome:	--with-applets-force}
 
 %{__make} OPTIMIZE="%{rpmcflags}"
 
@@ -191,48 +312,116 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README
-%{perl_sitearch}/Gtk
 %{perl_sitearch}/Gtk.pm
+%dir %{perl_sitearch}/Gtk
+%{perl_sitearch}/Gtk/[ACIKLTil]*
+%{perl_sitearch}/Gtk/Gdk.pm
+%dir %{perl_sitearch}/Gtk/Gdk
 %dir %{perl_sitearch}/auto/Gtk
-%dir %{perl_sitearch}/auto/Gtk/Gdk
-%dir %{perl_sitearch}/auto/Gtk/Gdk/ImlibImage
 %{perl_sitearch}/auto/Gtk/Gtk.bs
 %{perl_sitearch}/auto/Gtk/autosplit.ix
 %attr(755,root,root) %{perl_sitearch}/auto/Gtk/Gtk.so
-%{perl_sitearch}/auto/Gtk/Gdk/ImlibImage/ImlibImage.bs
+%dir %{perl_sitearch}/auto/Gtk/Gdk
 %{perl_sitearch}/auto/Gtk/Gdk/autosplit.ix
+%{_mandir}/man3/Gtk.3pm*
+%{_mandir}/man3/Gtk::[Ca-z]*.3pm*
+
+%if %{?_without_gdkimlib:0}%{!?_without_gdkimlib:1}
+%files Gdk-ImlibImage
+%defattr(644,root,root,755)
+%{perl_sitearch}/Gtk/Gdk/ImlibImage.pm
+%{perl_sitearch}/Gtk/Gdk/ImlibImage
+%dir %{perl_sitearch}/auto/Gtk/Gdk/ImlibImage
+%{perl_sitearch}/auto/Gtk/Gdk/ImlibImage/ImlibImage.bs
 %attr(755,root,root) %{perl_sitearch}/auto/Gtk/Gdk/ImlibImage/ImlibImage.so
-%{_mandir}/man3/Gtk*
-#to GDK-Pixbuf subpackage ?
+%{_mandir}/man3/Gtk::Gdk::ImlibImage*
+%endif
+
+%if %{?_without_gdkpixbuf:0}%{!?_without_gdkpixbuf:1}
+%files Gdk-Pixbuf
+%defattr(644,root,root,755)
+%{perl_sitearch}/Gtk/Gdk/Pixbuf.pm
+%{perl_sitearch}/Gtk/Gdk/Pixbuf
 %dir %{perl_sitearch}/auto/Gtk/Gdk/Pixbuf
 %{perl_sitearch}/auto/Gtk/Gdk/Pixbuf/Pixbuf.bs
 %attr(755,root,root) %{perl_sitearch}/auto/Gtk/Gdk/Pixbuf/Pixbuf.so
-#to GLArea subpackage ?
-%dir %{perl_sitearch}/auto/Gtk/GLArea
-%dir %{perl_sitearch}/auto/Gtk/GLArea/Constants
-%{perl_sitearch}/auto/Gtk/GLArea/GLArea.bs
-%dir %{perl_sitearch}/auto/Gtk/GLArea/Constants/autosplit.ix
-%attr(755,root,root) %{perl_sitearch}/auto/Gtk/GLArea/GLArea.so
-
-%if %{?_without_gnome:0}%{!?_without_gnome:1}
-%files -n perl-gnome
-%defattr(644,root,root,755)
-%{perl_sitearch}/Gnome
-%{perl_sitearch}/Gnome.pm
-%dir %{perl_sitearch}/auto/Gnome
-%{perl_sitearch}/auto/Gnome/Gnome.bs
-%attr(755,root,root) %{perl_sitearch}/auto/Gnome/Gnome.so
-
-%if %{?_without_gnomeprint:0}%{!?_without_gnomeprint:1}
-%dir %{perl_sitearch}/auto/Gnome/Print
-%{perl_sitearch}/auto/Gnome/Print/Print.bs
-%attr(755,root,root) %{perl_sitearch}/auto/Gnome/Print/Print.so
+%{_mandir}/man3/Gtk::Gdk::Pixbuf*
 %endif
 
-%{_mandir}/man3/Gnome*
-# to GladeXML subpackage ?
+%if %{?_without_gtkglarea:0}%{!?_without_gtkglarea:1}
+%files GLArea
+%defattr(644,root,root,755)
+%{perl_sitearch}/Gtk/GLArea.pm
+%{perl_sitearch}/Gtk/GLArea
+%dir %{perl_sitearch}/auto/Gtk/GLArea
+%{perl_sitearch}/auto/Gtk/GLArea/GLArea.bs
+%attr(755,root,root) %{perl_sitearch}/auto/Gtk/GLArea/GLArea.so
+%dir %{perl_sitearch}/auto/Gtk/GLArea/Constants
+%{perl_sitearch}/auto/Gtk/GLArea/Constants/autosplit.ix
+%endif
+
+%if %{?_without_glade:0}%{!?_without_glade:1}
+%files GladeXML
+%defattr(644,root,root,755)
+%{perl_sitearch}/Gtk/GladeXML.pm
+%{perl_sitearch}/Gtk/GladeXML
 %dir %{perl_sitearch}/auto/Gtk/GladeXML
 %{perl_sitearch}/auto/Gtk/GladeXML/autosplit.ix
 %{perl_sitearch}/auto/Gtk/GladeXML/GladeXML.bs
 %attr(755,root,root) %{perl_sitearch}/auto/Gtk/GladeXML/GladeXML.so
+%{_mandir}/man3/Gtk::GladeXML*
 %endif
+
+%if %{?_without_gtkxmhtml:0}%{!?_without_gtkxmhtml:1}
+%files XmHTML
+%defattr(644,root,root,755)
+%{perl_sitearch}/Gtk/XmHTML.pm
+%{perl_sitearch}/Gtk/XmHTML
+%dir %{perl_sitearch}/auto/Gtk/XmHTML
+%{perl_sitearch}/auto/Gtk/XmHTML/*.bs
+%attr(755,root,root) %{perl_sitearch}/auto/Gtk/XmHTML/*.so
+%endif
+
+%if %{?_with_gtkhtml:1}%{!?_with_gtkhtml:0}
+%files HTML
+%defattr(644,root,root,755)
+%{perl_sitearch}/Gtk/HTML.pm
+%{perl_sitearch}/Gtk/HTML
+%dir %{perl_sitearch}/auto/Gtk/HTML
+%{perl_sitearch}/auto/Gtk/HTML/*.bs
+%attr(755,root,root) %{perl_sitearch}/auto/Gtk/HTML/*.so
+%endif
+
+%if %{?_without_gnome:0}%{!?_without_gnome:1}
+%files -n perl-gnome
+%defattr(644,root,root,755)
+%{perl_sitearch}/Gnome.pm
+%dir %{perl_sitearch}/Gnome
+%{perl_sitearch}/Gnome/[IT]*
+%dir %{perl_sitearch}/auto/Gnome
+%{perl_sitearch}/auto/Gnome/Gnome.bs
+%attr(755,root,root) %{perl_sitearch}/auto/Gnome/Gnome.so
+%{_mandir}/man3/Gnome.3pm*
+%{_mandir}/man3/Gnome::referene.3pm*
+%endif
+
+%if %{?_without_gnomeprint:0}%{!?_without_gnomeprint:1}
+%files -n perl-gnome-Print
+%defattr(644,root,root,755)
+%{perl_sitearch}/Gnome/Print.pm
+%{perl_sitearch}/Gnome/Print
+%dir %{perl_sitearch}/auto/Gnome/Print
+%{perl_sitearch}/auto/Gnome/Print/Print.bs
+%attr(755,root,root) %{perl_sitearch}/auto/Gnome/Print/Print.so
+%{_mandir}/man3/Gnome::Print*
+%endif
+
+#%if %{?_without_applets:0}%{!?_without_applets:1}
+#%files -n perl-gnome-Applet
+#%defattr(644,root,root,755)
+#%{perl_sitearch}/Gnome/Applet.pm
+#%{perl_sitearch}/Gnome/Applet
+#%dir %{perl_sitearch}/auto/Gnome/Applet
+#%{perl_sitearch}/auto/Gnome/Applet/*.bs
+#%attr(755,root,root) %{perl_sitearch}/auto/Gnome/Applet/*.so
+#%endif
