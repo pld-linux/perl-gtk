@@ -32,17 +32,17 @@ make install \
 	PREFIX=$RPM_BUILD_ROOT/usr \
 	INSTALLMAN3DIR=$RPM_BUILD_ROOT/usr/man/man3
 
-bzip2 -9 README
-gzip -9fn $RPM_BUILD_ROOT/usr/man/man3/*
+gzip -9nf $RPM_BUILD_ROOT/usr/man/man3/*
+gzip -9nf README
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files 
 %defattr(644,root,root,755)
-%doc README.bz2
+%doc README.gz
 
-%attr(644,root, man) /usr/man/man3/*
+%attr(644, root, man) /usr/man/man3/*
 
 /usr/lib/perl5/site_perl/*/*/*.pm
 /usr/lib/perl5/site_perl/*/*/Gtk
