@@ -18,7 +18,7 @@ BuildRequires:	rpm-perlprov
 %requires_eq	perl
 Requires:	%{perl_sitearch}
 Obsoletes:	Gtk-perl
-Buildroot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 This package includes Perl extensions for Gtk+ (the Gimp ToolKit), a library
