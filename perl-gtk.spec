@@ -62,7 +62,7 @@ BuildRequires:	gtk+-devel >= 1.2.0
 %{?with_glade:BuildRequires:	libglade-devel < 1:1.99}
 BuildRequires:	perl-XML-Parser
 BuildRequires:	perl-XML-Writer
-BuildRequires:	perl-devel >= 5.005_03-10
+BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	Gtk-perl
