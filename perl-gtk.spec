@@ -7,14 +7,14 @@
 # _without_gdkimlib	- without Gtk::Gdk::ImlibImage module (imlib library)
 # _without_gdkpixbuf	- without Gtk::Gdk::Pixbuf module (gdk-pixbuf library)
 # _without_glade	- without Gtk::GladeXML module (libglade library)
-# _without_gnome	- without Gnome module (gnome-libs)
+# _with_gnome		- with Gnome module (gnome-libs)
 # _without_gnomeprint	- without Gnome::Print module (gnome-print library)
 # _without_gtkglarea	- without Gtk::GLArea module (gtkglarea library)
 # _without_gtkxmhtml	- without Gtk::XmHTML module (gtkxmhtml library)
 #
-%{?_without_gnome:%define	_without_applets	1}
-%{?_without_gnome:%define	_without_gnomeprint	1}
-%{?_without_gnome:%define       _without_gtkxmhtml     1}
+%{!?_with_gnome:%define	_without_applets	1}
+%{!?_with_gnome:%define	_without_gnomeprint	1}
+%{!?_with_gnome:%define _without_gtkxmhtml     1}
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	Gtk
 %define		pnam	Perl
@@ -47,7 +47,7 @@ URL:		http://www.gtkperl.org/
 %{!?_without_gdkpixbuf:BuildRequires:	gdk-pixbuf-devel}
 %{!?_without_applets:BuildRequires:	gnome-core-devel}
 %{!?_without_applets:BuildRequires:	control-center-devel < 1.99}
-%{!?_without_gnome:BuildRequires:	gnome-libs-devel}
+%{?_with_gnome:BuildRequires:	gnome-libs-devel}
 %{!?_without_gnomeprint:BuildRequires:	gnome-print-devel}
 BuildRequires:	gtk+-devel >= 1.2.0
 %{!?_without_gtkglarea:BuildRequires:	gtkglarea1-devel < 1.99}
@@ -290,7 +290,7 @@ Modu³ Gnome::Applet - obs³uga apletów dla perl-gnome.
 %{?_without_gdkpixbuf:	--without-gdkpixbuf}	%{!?_without_gdkpixbuf:	--with-gdkpixbuf-force} \
 %{?_without_gdkimlib:	--without-gdkimlib}	%{!?_without_gdkimlib:	--with-gdkimlib-force} \
 %{?_without_glade:	--without-glade}	%{!?_without_glade:	--with-glade-force} \
-%{?_without_gnome:	--without-gnome}	%{!?_without_gnome:	--with-gnome-force} \
+%{!?_with_gnome:	--without-gnome}	%{?_with_gnome:		--with-gnome-force} \
 %{?_without_gnomeprint:	--without-gnomeprint}	%{!?_without_gnomeprint:--with-gnomeprint-force} \
 %{?_without_gtkglarea:	--without-gtkglarea}	%{!?_without_gtkglarea:	--with-gtkglarea-force} \
 %{!?_with_gtkhtml:	--without-gtkhtml}	%{?_with_gtkhtml:	--with-gtkhtml-force} \
