@@ -1,0 +1,11 @@
+--- Gtk-Perl-0.7008/GtkGLArea/Makefile.PL.orig	Fri Mar 23 15:57:08 2001
++++ Gtk-Perl-0.7008/GtkGLArea/Makefile.PL	Sat Aug  3 17:51:01 2002
+@@ -11,7 +11,7 @@
+ $gl = new ExtUtils::Depends ('Gtk::GLArea', 'Gtk');
+ 
+ $gl->set_inc (`gtk-config --cflags`);
+-$libs = "-lgtkgl  -lMesaGL -lMesaGLU " . `gtk-config --libs`;
++$libs = "-L/usr/X11R6/lib -lgtkgl  -lMesaGL -lMesaGLU " . `gtk-config --libs`;
+ chomp($libs);
+ $nomesa = $libs;
+ $nomesa =~ s/Mesa//g;

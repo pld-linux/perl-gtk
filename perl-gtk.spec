@@ -41,8 +41,8 @@ License:	LGPL
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 Patch0:		%{name}-fix.patch
+Patch1:		%{name}-gtkgl.patch
 URL:		http://www.gtkperl.org/
-BuildRequires:	perl >= 5.005_03-10
 %{!?_without_gdkpixbuf:BuildRequires: gdk-pixbuf-devel}
 %{!?_without_gnome:BuildRequires: gnome-libs-devel}
 %{!?_without_gnomeprint:BuildRequires: gnome-print-devel}
@@ -53,6 +53,7 @@ BuildRequires:	gtk+-devel
 %{!?_without_glade:BuildRequires: libglade-devel}
 BuildRequires:	perl-XML-Parser
 BuildRequires:	perl-XML-Writer
+BuildRequires:	perl-devel >= 5.005_03-10
 BuildRequires:	rpm-perlprov
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Provides:	perl(Gtk::TypesLazy)
@@ -283,6 +284,7 @@ Modu³ Gnome::Applet - obs³uga apletów dla perl-gnome.
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
 %patch0 -p1
+%patch1 -p1
 
 %build
 perl Makefile.PL \
