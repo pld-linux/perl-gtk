@@ -30,7 +30,7 @@ Summary(sl):	Perlovske raz¹iritve za Gtk+ (Gimp ToolKit)
 Summary(sv):	Perl-utvidgning för Gtk+ (the Gimp ToolKit)
 Name:		perl-gtk
 Version:	0.7008
-Release:	10.1
+Release:	10.2
 License:	LGPL
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
@@ -195,10 +195,22 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{perl_sitearch}/auto/Gtk/Gdk
 %dir %{perl_sitearch}/auto/Gtk/Gdk/ImlibImage
 %{perl_sitearch}/auto/Gtk/Gtk.bs
+%{perl_sitearch}/auto/Gtk/autosplit.ix
 %attr(755,root,root) %{perl_sitearch}/auto/Gtk/Gtk.so
 %{perl_sitearch}/auto/Gtk/Gdk/ImlibImage/ImlibImage.bs
+%{perl_sitearch}/auto/Gtk/Gdk/autosplit.ix
 %attr(755,root,root) %{perl_sitearch}/auto/Gtk/Gdk/ImlibImage/ImlibImage.so
 %{_mandir}/man3/Gtk*
+#to GDK-Pixbuf subpackage ?
+%dir %{perl_sitearch}/auto/Gtk/Gdk/Pixbuf
+%{perl_sitearch}/auto/Gtk/Gdk/Pixbuf/Pixbuf.bs
+%attr(755,root,root) %{perl_sitearch}/auto/Gtk/Gdk/Pixbuf/Pixbuf.so
+#to GLArea subpackage ?
+%dir %{perl_sitearch}/auto/Gtk/GLArea
+%dir %{perl_sitearch}/auto/Gtk/GLArea/Constants
+%{perl_sitearch}/auto/Gtk/GLArea/GLArea.bs
+%dir %{perl_sitearch}/auto/Gtk/GLArea/Constants/autosplit.ix
+%attr(755,root,root) %{perl_sitearch}/auto/Gtk/GLArea/GLArea.so
 
 %if %{?_without_gnome:0}%{!?_without_gnome:1}
 %files -n perl-gnome
@@ -208,5 +220,13 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{perl_sitearch}/auto/Gnome
 %{perl_sitearch}/auto/Gnome/Gnome.bs
 %attr(755,root,root) %{perl_sitearch}/auto/Gnome/Gnome.so
+%dir %{perl_sitearch}/auto/Gnome/Print
+%{perl_sitearch}/auto/Gnome/Print/Print.bs
+%attr(755,root,root) %{perl_sitearch}/auto/Gnome/Print/Print.so
 %{_mandir}/man3/Gnome*
+# to GladeXML subpackage ?
+%dir %{perl_sitearch}/auto/Gtk/GladeXML
+%{perl_sitearch}/auto/Gtk/GladeXML/autosplit.ix
+%{perl_sitearch}/auto/Gtk/GladeXML/GladeXML.bs
+%attr(755,root,root) %{perl_sitearch}/auto/Gtk/GladeXML/GladeXML.so
 %endif
