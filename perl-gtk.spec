@@ -13,7 +13,7 @@ BuildPreReq:	gtk+-devel
 BuildPreReq:	glib-devel
 BuildPreReq:	XFree86-devel
 BuildPrereq:	imlib-devel
-%requires_eq	perl
+Requires:	perl >= 5.004
 Obsoletes:	Gtk-perl
 Buildroot:	/tmp/%{name}-%{version}-root
 
