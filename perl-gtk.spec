@@ -29,7 +29,7 @@ Summary(es):	Extensiones Perl para Gtk+
 Summary(fr):	Extensions Perl pour Gtk+ (l'ensemble d'outils GIMP)
 Summary(it):	Estensioni Perl per Gtk+ (Gimp Toolkit)
 Summary(ja):	Gtk+ (the Gimp ToolKit) ÍÑ¤Î Perl ³ÈÄ¥
-Summary(no):	Perlmodul for Gtk+
+Summary(nb):	Perlmodul for Gtk+
 Summary(pl):	Rozszerzenie Perla dla Gtk+
 Summary(pt):	Uma extensão de Perl para o Gtk+ (Gimp Toolkit)
 Summary(pt_BR):	Extensões Perl para o Gtk+
@@ -124,7 +124,7 @@ Window System ÍÑ¤Î¥°¥é¥Õ¥£¥«¥ë¥æ¡¼¥¶¡¼¥¤¥ó¥¿¡¼¥Õ¥§¥¤¥¹¤òºîÀ®¤¹¤ë¤¿¤á¤Ë
 ¤òºîÀ®¤¹¤ë¤³¤È¤¬¤Ç¤­¤Þ¤¹¡£¤³¤Î¥Ñ¥Ã¥±¡¼¥¸¤ò¥¤¥ó¥¹¥È¡¼¥ë¤¹¤ë¾ì¹ç¤Ï¡¢
 Perl ¤È Gtk+ ¤â¥¤¥ó¥¹¥È¡¼¥ë¤·¤Ê¤±¤ì¤Ð¤Ê¤ê¤Þ¤»¤ó¡£
 
-%description -l no
+%description -l nb
 Denne pakken inneholder perl-moduler for Gtk+, et bibliotek som brukes
 for å lage grafiske grensesnitt for X. Modulene i denne pakken gjør
 det mulig å lage grafiske programmer ved hjelp av perl og Gtk+. For å
@@ -225,7 +225,7 @@ Summary(es):	Extensiones Perl para GNOME
 Summary(fr):	Extensions Perl pour GNOME
 Summary(it):	Estensioni Perl per GNOME
 Summary(ja):	GNOME ÍÑ¤Î Perl ³ÈÄ¥
-Summary(no):	Perlmodul for GNOME
+Summary(nb):	Perlmodul for GNOME
 Summary(pl):	Rozszerzenie Perla dla GNOME
 Summary(pt):	Uma extensão de Perl para o GNOME
 Summary(pt_BR):	Extensões Perl para o GNOME
@@ -251,7 +251,7 @@ Summary(es):	Extensiones Perl para GnomePrint
 Summary(fr):	Extensions Perl pour GnomePrint
 Summary(it):	Estensioni Perl per GnomePrint
 Summary(ja):	GnomePrint ÍÑ¤Î Perl ³ÈÄ¥
-Summary(no):	Perlmodul for GnomePrint
+Summary(nb):	Perlmodul for GnomePrint
 Summary(pl):	Rozszerzenie Perl dla GnomePrint
 Summary(pt):	Uma extensão de Perl para o GnomePrint
 Summary(pt_BR):	Extensões Perl para o GnomePrint
