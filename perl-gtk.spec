@@ -290,7 +290,7 @@ Modu³ Gnome::Applet - obs³uga apletów dla perl-gnome.
 %patch1 -p1
 
 %build
-perl Makefile.PL \
+%{__perl} Makefile.PL \
 	--without-guessing \
 %{?_without_gdkpixbuf:	--without-gdkpixbuf}	%{!?_without_gdkpixbuf:	--with-gdkpixbuf-force} \
 %{?_without_gdkimlib:	--without-gdkimlib}	%{!?_without_gdkimlib:	--with-gdkimlib-force} \
