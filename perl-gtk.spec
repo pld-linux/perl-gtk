@@ -42,17 +42,13 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README.gz
 
-%attr(644, root, man) /usr/man/man3/*
-
+%attr(755,root,root) /usr/lib/perl5/site_perl/*/*/auto/Gtk/Gtk.so
 /usr/lib/perl5/site_perl/*/*/*.pm
 /usr/lib/perl5/site_perl/*/*/Gtk
-
+/usr/lib/perl5/site_perl/*/*/auto/Gtk/Gtk.bs
 %dir /usr/lib/perl5/site_perl/*/*/auto/Gtk
 %dir /usr/lib/perl5/site_perl/*/*/auto/Gtk/Gdk
-
-/usr/lib/perl5/site_perl/*/*/auto/Gtk/Gtk.bs
-
-%attr(755,root,root) /usr/lib/perl5/site_perl/*/*/auto/Gtk/Gtk.so
+/usr/man/man3/*
 
 %changelog
 * Fri Feb 05 1999 Wojtek ¦lusarczyk <wojtek@shadow.eu.org>
