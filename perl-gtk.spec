@@ -80,10 +80,10 @@ vytváøet grafická u¾ivatelská rozhraní pro prostøedí X Window System.
 Balíèek potøebuje pro svou funkci Perl a Gtk+.
 
 %description -l da
-Denne pakke indeholder perl-moduler for Gtk+, et bibliotek som bruges
+Denne pakke indeholder Perl-moduler for Gtk+, et bibliotek som bruges
 for at lave grafiske grænseflade for X. Modulerne i denne pakke gør
-det mulig at lave grafiske programmer ved hjælp af perl og Gtk+. For
-at kunne installere denne pakke skal både perl og Gtk+ være
+det mulig at lave grafiske programmer ved hjælp af Perl og Gtk+. For
+at kunne installere denne pakke skal både Perl og Gtk+ være
 installeret.
 
 %description -l de
@@ -127,14 +127,14 @@ Window System ÍÑ¤Î¥°¥é¥Õ¥£¥«¥ë¥æ¡¼¥¶¡¼¥¤¥ó¥¿¡¼¥Õ¥§¥¤¥¹¤òºîÀ®¤¹¤ë¤¿¤á¤Ë
 Perl ¤È Gtk+ ¤â¥¤¥ó¥¹¥È¡¼¥ë¤·¤Ê¤±¤ì¤Ð¤Ê¤ê¤Þ¤»¤ó¡£
 
 %description -l nb
-Denne pakken inneholder perl-moduler for Gtk+, et bibliotek som brukes
+Denne pakken inneholder Perl-moduler for Gtk+, et bibliotek som brukes
 for å lage grafiske grensesnitt for X. Modulene i denne pakken gjør
-det mulig å lage grafiske programmer ved hjelp av perl og Gtk+. For å
-kunne installere denne pakken må både perl og Gtk+ være installert.
+det mulig å lage grafiske programmer ved hjelp av Perl og Gtk+. For å
+kunne installere denne pakken må både Perl og Gtk+ være installert.
 
 %description -l pl
-Gtk+-perl pozwoli ci na pisanie interfejsu graficznego przy u¿yciu
-perl'a i gtk.
+Gtk+-perl pozwala na pisanie interfejsu graficznego przy u¿yciu Perla
+i Gtk+.
 
 %description -l pt_BR
 Este pacote contém extensões Perl para o Gtk+.
@@ -242,7 +242,7 @@ Requires:	%{name}-Gdk-ImlibImage = %{version}
 This package includes Perl extensions for GNOME.
 
 %description -n perl-gnome -l pl
-Ten pakiet zawiera rozszerzenia perla dla GNOME.
+Ten pakiet zawiera rozszerzenia Perla dla GNOME.
 
 %package -n perl-gnome-Print
 Summary:	Perl extensions for GnomePrint
@@ -268,7 +268,7 @@ Requires:	%{name}-Gdk-Pixbuf = %{version}
 This package includes Perl extensions for GnomePrint.
 
 %description -n perl-gnome-Print -l pl
-Ten pakiet zawiera rozszerzenia perla dla GnomePrint.
+Ten pakiet zawiera rozszerzenia Perla dla GnomePrint.
 
 %package -n perl-gnome-Applet
 Summary:	Applets support for perl-gnome
