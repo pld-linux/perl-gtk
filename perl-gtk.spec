@@ -404,7 +404,7 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_sitearch}/auto/Gnome/Gnome.bs
 %attr(755,root,root) %{perl_sitearch}/auto/Gnome/Gnome.so
 %{_mandir}/man3/Gnome.3pm*
-%{_mandir}/man3/Gnome::referene.3pm*
+%{_mandir}/man3/Gnome::reference.3pm*
 %endif
 
 %if %{?_without_gnomeprint:0}%{!?_without_gnomeprint:1}
