@@ -5,17 +5,19 @@
 %define		_noautoreq "perl(Gtk::TypesLazy)" "perl(Gnome::TypesLazy)"
 %include	/usr/lib/rpm/macros.perl
 Summary:	Perl extensions for Gtk+ (the Gimp ToolKit)
+Summary(es):	Extensiones Perl para GTK+
 Summary(pl):	Rozszerzenie Perl dla Gtk
+Summary(pt_BR):	Extensões Perl para o GTK+
 Name:		perl-gtk
-Version:	0.7006
-Release:	1
+Version:	0.7008
+Release:	7
 License:	LGPL
 Group:		Development/Languages/Perl
 Group(de):	Entwicklung/Sprachen/Perl
 Group(pl):	Programowanie/Jêzyki/Perl
-Source0:	ftp://www.gtk.org/pub/perl/Gtk-Perl-%{version}.tar.gz
-Patch0:		perl-gtk-fix.patch
-URL:		http://www.gtk.org/
+Source0:	http://www.gtkperl.org/Gtk-Perl-%{version}.tar.gz
+Patch0:		%{name}-fix.patch
+URL:		http://www.gtkperl.org/
 BuildRequires:	perl >= 5.005_03-10
 BuildRequires:	gtk+-devel
 %{!?_without_gnome:BuildRequires: gnome-libs-devel}
@@ -23,8 +25,8 @@ BuildRequires:	imlib-devel
 BuildRequires:	perl-XML-Parser
 BuildRequires:	perl-XML-Writer
 BuildRequires:	rpm-perlprov
-Obsoletes:	Gtk-perl
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+Obsoletes:	Gtk-perl
 
 %description
 This package includes Perl extensions for Gtk+ (the Gimp ToolKit), a
@@ -33,9 +35,15 @@ System. The extensions provided in this package allow you to write
 graphical interfaces using Perl and Gtk+. If you install this package,
 you'll need to also have Perl and Gtk+ installed.
 
+%description -l es
+Este paquete contiene extensiones Perl para GTK+.
+
 %description -l pl
 Gtk+-perl pozwoli ci na pisanie interfejsu graficznego przy u¿yciu
 perl'a i gtk.
+
+%description -l pt_BR
+Este pacote contém extensões Perl para o GTK+.
 
 %package -n perl-gnome
 Summary:	Perl extensions for Gnome
