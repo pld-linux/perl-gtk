@@ -2,7 +2,7 @@ Summary:	Perl extention for gtk
 Summary(pl):	Rozszerzenie Perl dla Gtk
 Name:		perl-gtk
 Version:	0.6123
-Release:	1
+Release:	2
 Copyright:	LGPL
 Group:		Development/Languages/Perl
 Group(pl):	Programowanie/Jêzyki/Perl
