@@ -30,10 +30,10 @@ make OPTIMIZE="$RPM_OPT_FLAGS"
 rm -rf $RPM_BUILD_ROOT
 make install \
 	PREFIX=$RPM_BUILD_ROOT/usr \
-	INSTALLMAN3DIR=$RPM_BUILD_ROOT/usr/man/man3
+	INSTALLMAN3DIR=$RPM_BUILD_ROOT%{_mandir}/man3
 
-gzip -9nf $RPM_BUILD_ROOT/usr/man/man3/*
-gzip -9nf README
+gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man3/* \
+	README
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -48,7 +48,7 @@ rm -rf $RPM_BUILD_ROOT
 /usr/lib/perl5/site_perl/*/*/auto/Gtk/Gtk.bs
 %dir /usr/lib/perl5/site_perl/*/*/auto/Gtk
 %dir /usr/lib/perl5/site_perl/*/*/auto/Gtk/Gdk
-/usr/man/man3/*
+%{_mandir}/man3/*
 
 %changelog
 * Fri Feb 05 1999 Wojtek ¦lusarczyk <wojtek@shadow.eu.org>
