@@ -38,13 +38,13 @@ perl Makefile.PL \
 	--without-gnome-panel \
 	--without-gnome-zvt
 
-make OPTIMIZE="$RPM_OPT_FLAGS"
+%{__make} OPTIMIZE="$RPM_OPT_FLAGS"
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{perl_archlib}
 
-make install \
+%{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT 
 
 sed -e "s#$RPM_BUILD_ROOT##g" \
