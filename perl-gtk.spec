@@ -14,6 +14,7 @@
 #
 %{?_without_gnome:%define	_without_applets	1}
 %{?_without_gnome:%define	_without_gnomeprint	1}
+%{?_without_gnome:%define       _without_gtkxmhtml     1}
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	Gtk
 %define		pnam	Perl
