@@ -14,6 +14,7 @@ BuildRequires:	gtk+-devel
 BuildRequires:	glib-devel
 BuildRequires:	XFree86-devel
 BuildRequires:	imlib-devel
+BuildRequires:	rpm-perlprov
 %requires_eq	perl
 Requires:	%{perl_sitearch}
 Obsoletes:	Gtk-perl
