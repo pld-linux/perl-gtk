@@ -8,9 +8,9 @@
 #
 # Conditional build:
 %bcond_with	gtkhtml		# build Gtk::HTML module (gtkhtml library)
-%bcond_without	applets		# don't build Gnome::Applet module (gnome-applets libs) [NFY]
+%bcond_with	applets		# don't build Gnome::Applet module (gnome-applets libs) [NFY]
 %bcond_without	gdkimlib	# don't build Gtk::Gdk::ImlibImage module (imlib library)
-%bcond_without	gdk_pixbif	# don't build Gtk::Gdk::Pixbuf module (gdk-pixbuf library)
+%bcond_without	gdk_pixbuf	# don't build Gtk::Gdk::Pixbuf module (gdk-pixbuf library)
 %bcond_without	glade		# don't build Gtk::GladeXML module (libglade library)
 %bcond_without	gnome		# don't build Gnome module (and other requiring gnome-libs)
 %bcond_without	gnomeall	# as above, including Gtk::XmHTML (gtkxmhtml GNOME1 component)
