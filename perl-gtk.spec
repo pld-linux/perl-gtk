@@ -1,3 +1,7 @@
+#
+# Conditional build:
+# bcond_off_gnome
+#
 %define		_noautoreq "perl(Gtk::TypesLazy)" "perl(Gnome::TypesLazy)"
 %include	/usr/lib/rpm/macros.perl
 Summary:	Perl extensions for Gtk+ (the Gimp ToolKit)
@@ -14,7 +18,10 @@ Patch0:		perl-gtk-fix.patch
 URL:		http://www.gtk.org/
 BuildRequires:	perl >= 5.005_03-10
 BuildRequires:	gtk+-devel
+%{!?bcond_off_gnome:BuildRequires: gnome-libs-devel}
 BuildRequires:	imlib-devel
+BuildRequires:	perl-XML-Parser
+BuildRequires:	perl-XML-Writer
 BuildRequires:	rpm-perlprov
 Obsoletes:	Gtk-perl
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -49,7 +56,7 @@ This package includes Perl extensions for Gnome.
 perl Makefile.PL \
 	--without-guessing \
 	--with-gdkimlib \
-	--with-gnome
+	%{?bcond_off_gnome:--without-gnome}%{!?bcond_off_gnome:--with-gnome}
 
 %{__make} OPTIMIZE="%{rpmcflags}"
 
@@ -79,6 +86,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{perl_sitearch}/auto/Gtk/Gdk/ImlibImage/ImlibImage.so
 %{_mandir}/man3/Gtk*
 
+%if %{?bcond_off_gnome:0}%{!?bcond_off_gnome:1}
 %files -n perl-gnome
 %defattr(644,root,root,755)
 %{perl_sitearch}/Gnome
@@ -87,3 +95,4 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_sitearch}/auto/Gnome/Gnome.bs
 %attr(755,root,root) %{perl_sitearch}/auto/Gnome/Gnome.so
 %{_mandir}/man3/Gnome*
+%endif
