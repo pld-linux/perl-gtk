@@ -262,8 +262,8 @@ Summary(sv):	Perl-utvidgning för GnomePrint
 Group:		Development/Languages/Perl
 Requires:	perl-gnome = %{version}
 Requires:	%{name}-Gdk-Pixbuf = %{version}
-%{!?_without_gnomeprint:Provides:	perl(Gnome::Print::Types)}
-%{!?_without_gnomeprint:Provides:	perl(Gnome::Print::TypesLazy)}
+Provides:	perl(Gnome::Print::Types)
+Provides:	perl(Gnome::Print::TypesLazy)
 
 %description -n perl-gnome-Print
 This package includes Perl extensions for GnomePrint.
@@ -276,7 +276,7 @@ Summary:	applets support for perl-gnome
 Summary(pl):	Obs³uga apletów dla perl-gnome
 Group:		Development/Languages/Perl
 Requires:	perl-gnome = %{version}
-%{!?_without_applets:Provides:	perl(Gnome::Applet::Types)}
+Provides:	perl(Gnome::Applet::Types)
 
 %description -n perl-gnome-Applet
 Gnome::Applet module - applets support for perl-gnome.
