@@ -1,6 +1,6 @@
 %include	/usr/lib/rpm/macros.perl
-%define	pdir	Gtk
-%define	pnam	Perl
+%define		pdir	Gtk
+%define		pnam	Perl
 #
 # Conditional build:
 # _with_gtkhtml
@@ -12,7 +12,7 @@
 # _without_gtkglarea
 # _without_gtkhtml
 #
-%define		_noautoreq "perl(Gtk::TypesLazy)" "perl(Gnome::TypesLazy)" "perl(Gtk::GLArea::Types)" "perl(Gtk::Gdk::Pixbuf::Types)" "perl(Gtk::GladeXML::Types)"
+%{?_without_gnome:%define	_without_gnomeprint	1}
 Summary:	Perl extensions for Gtk+ (the Gimp ToolKit)
 Summary(cs):	Roz¹íøení Perlu pro Gtk+ (Gimp ToolKit)
 Summary(da):	Perl udvidelser for Gtk+
@@ -30,7 +30,7 @@ Summary(sl):	Perlovske raz¹iritve za Gtk+ (Gimp ToolKit)
 Summary(sv):	Perl-utvidgning för Gtk+ (the Gimp ToolKit)
 Name:		perl-gtk
 Version:	0.7008
-Release:	10.2
+Release:	10.3
 License:	LGPL
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
@@ -51,6 +51,8 @@ BuildRequires:	perl-XML-Writer
 BuildRequires:	rpm-perlprov
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	Gtk-perl
+
+%define		_noautoreq "perl(Gtk::TypesLazy)" "perl(Gnome::TypesLazy)" "perl(Gtk::GLArea::Types)" "perl(Gtk::Gdk::Pixbuf::Types)" "perl(Gtk::GladeXML::Types)"
 
 %description
 This package includes Perl extensions for Gtk+ (the Gimp ToolKit), a
@@ -149,6 +151,8 @@ Summary(sl):	Perlovske raz¹iritve za Gnome
 Summary(sv):	Perl-utvidgning för Gnome
 Group:		Development/Languages/Perl
 Requires:	%{name} = %{version}
+%{!?_without_gnomeprint:Provides:	perl(Gnome::Print::Types)}
+%{!?_without_gnomeprint:Provides:	perl(Gnome::Print::TypesLazy)}
 
 %description -n perl-gnome
 This package includes Perl extensions for Gnome.
@@ -181,14 +185,12 @@ install -d $RPM_BUILD_ROOT%{perl_archlib}
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-gzip -9nf README
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc README
 %{perl_sitearch}/Gtk
 %{perl_sitearch}/Gtk.pm
 %dir %{perl_sitearch}/auto/Gtk
@@ -220,9 +222,13 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{perl_sitearch}/auto/Gnome
 %{perl_sitearch}/auto/Gnome/Gnome.bs
 %attr(755,root,root) %{perl_sitearch}/auto/Gnome/Gnome.so
+
+%if %{?_without_gnomeprint:0}%{!?_without_gnomeprint:1}
 %dir %{perl_sitearch}/auto/Gnome/Print
 %{perl_sitearch}/auto/Gnome/Print/Print.bs
 %attr(755,root,root) %{perl_sitearch}/auto/Gnome/Print/Print.so
+%endif
+
 %{_mandir}/man3/Gnome*
 # to GladeXML subpackage ?
 %dir %{perl_sitearch}/auto/Gtk/GladeXML
