@@ -27,7 +27,7 @@ Summary(fr):	Extensions Perl pour Gtk+ (l'ensemble d'outils GIMP)
 Summary(it):	Estensioni Perl per Gtk+ (Gimp Toolkit)
 Summary(ja):	Gtk+ (the Gimp ToolKit) ÍÑ¤Î Perl ³ÈÄ¥
 Summary(no):	Perlmodul for Gtk+
-Summary(pl):	Rozszerzenie Perl dla Gtk+
+Summary(pl):	Rozszerzenie Perla dla Gtk+
 Summary(pt):	Uma extensão de Perl para o Gtk+ (Gimp Toolkit)
 Summary(pt_BR):	Extensões Perl para o Gtk+
 Summary(ru):	òÁÓÛÉÒÅÎÎÁÑ ×ÅÒÓÉÑ Perl ÄÌÑ Gtk+ (Gimp Toolkit)
@@ -223,7 +223,7 @@ Summary(fr):	Extensions Perl pour GNOME
 Summary(it):	Estensioni Perl per GNOME
 Summary(ja):	GNOME ÍÑ¤Î Perl ³ÈÄ¥
 Summary(no):	Perlmodul for GNOME
-Summary(pl):	Rozszerzenie Perl dla GNOME
+Summary(pl):	Rozszerzenie Perla dla GNOME
 Summary(pt):	Uma extensão de Perl para o GNOME
 Summary(pt_BR):	Extensões Perl para o GNOME
 Summary(ru):	òÁÓÛÉÒÅÎÎÁÑ ×ÅÒÓÉÑ Perl ÄÌÑ GNOME
@@ -266,7 +266,7 @@ This package includes Perl extensions for GnomePrint.
 Ten pakiet zawiera rozszerzenia perla dla GnomePrint.
 
 %package -n perl-gnome-Applet
-Summary:	applets support for perl-gnome
+Summary:	Applets support for perl-gnome
 Summary(pl):	Obs³uga apletów dla perl-gnome
 Group:		Development/Languages/Perl
 Requires:	perl-gnome = %{version}
