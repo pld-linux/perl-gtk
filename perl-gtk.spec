@@ -1,20 +1,23 @@
 #
 # TODO: GtkHTML, Bonobo and Mozilla (don't build now - need fixes or API update)
 #
-# Conditional build:
-# _with_gtkhtml		- with Gtk::HTML module (gtkhtml library)
-# _without_applets	- without Gnome::Applet module (gnome-applets libraries) [not done yet]
-# _without_gdkimlib	- without Gtk::Gdk::ImlibImage module (imlib library)
-# _without_gdk_pixbuf	- without Gtk::Gdk::Pixbuf module (gdk-pixbuf library)
-# _without_glade	- without Gtk::GladeXML module (libglade library)
-# _with_gnome		- with Gnome module (gnome-libs)
-# _without_gnomeprint	- without Gnome::Print module (gnome-print library)
-# _without_gtkglarea	- without Gtk::GLArea module (gtkglarea library)
-# _without_gtkxmhtml	- without Gtk::XmHTML module (gtkxmhtml library)
+%{?_without_gnomeall:%global	_without_gnome		1}
+%{?_without_gnomeall:%global	_without_gtkxmhtml	1}
+%{?_without_gnome:%global	_without_applets	1}
+%{?_without_gnome:%global	_without_gnomeprint	1}
 #
-%{!?_with_gnome:%define	_without_applets	1}
-%{!?_with_gnome:%define	_without_gnomeprint	1}
-%{!?_with_gnome:%define _without_gtkxmhtml     1}
+# Conditional build:
+%bcond_with	gtkhtml		# build Gtk::HTML module (gtkhtml library)
+%bcond_without	applets		# don't build Gnome::Applet module (gnome-applets libs) [NFY]
+%bcond_without	gdkimlib	# don't build Gtk::Gdk::ImlibImage module (imlib library)
+%bcond_without	gdk_pixbif	# don't build Gtk::Gdk::Pixbuf module (gdk-pixbuf library)
+%bcond_without	glade		# don't build Gtk::GladeXML module (libglade library)
+%bcond_without	gnome		# don't build Gnome module (and other requiring gnome-libs)
+%bcond_without	gnomeall	# as above, including Gtk::XmHTML (gtkxmhtml GNOME1 component)
+%bcond_without	gnomeprint	# don't build Gnome::Print module (gnome-print library)
+%bcond_without	gtkglarea	# don't build Gtk::GLArea module (gtkglarea library)
+%bcond_without	gtkxmhtml	# don't build Gtk::XmHTML module (gtkxmhtml library)
+#
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	Gtk
 %define		pnam	Perl
@@ -44,17 +47,17 @@ Patch0:		%{name}-fix.patch
 Patch1:		%{name}-gtkgl.patch
 Patch2:		%{name}-inc.patch
 URL:		http://www.gtkperl.org/
-%{!?_without_gdk_pixbuf:BuildRequires:	gdk-pixbuf-devel}
-%{!?_without_applets:BuildRequires:	gnome-core-devel}
-%{!?_without_applets:BuildRequires:	control-center-devel < 1.99}
-%{?_with_gnome:BuildRequires:	gnome-libs-devel}
-%{!?_without_gnomeprint:BuildRequires:	gnome-print-devel}
+%{?with_gdk_pixbuf:BuildRequires:	gdk-pixbuf-devel}
+%{?with_applets:BuildRequires:	gnome-core-devel}
+%{?with_applets:BuildRequires:	control-center-devel < 1.99}
+%{?with_gnome:BuildRequires:	gnome-libs-devel}
+%{?with_gnomeprint:BuildRequires:	gnome-print-devel}
 BuildRequires:	gtk+-devel >= 1.2.0
-%{!?_without_gtkglarea:BuildRequires:	gtkglarea1-devel < 1.99}
-%{?_with_gtkhtml:BuildRequires:		gtkhtml-devel}
-%{!?_without_gtkxmhtml:BuildRequires:	gtkxmhtml-devel}
-%{!?_without_gdkimlib:BuildRequires:	imlib-devel}
-%{!?_without_glade:BuildRequires:	libglade-devel < 1:1.99}
+%{?with_gtkglarea:BuildRequires:	gtkglarea1-devel < 1.99}
+%{?with_gtkhtml:BuildRequires:		gtkhtml-devel}
+%{?with_gtkxmhtml:BuildRequires:	gtkxmhtml-devel}
+%{?with_gdkimlib:BuildRequires:	imlib-devel}
+%{?with_glade:BuildRequires:	libglade-devel < 1:1.99}
 BuildRequires:	perl-XML-Parser
 BuildRequires:	perl-XML-Writer
 BuildRequires:	perl-devel >= 5.005_03-10
@@ -287,15 +290,15 @@ Modu³ Gnome::Applet - obs³uga apletów dla perl-gnome.
 %{__perl} Makefile.PL \
 	INSTALLDIRS=vendor \
 	--without-guessing \
-%{?_without_gdk_pixbuf:	--without-gdkpixbuf}	%{!?_without_gdk_pixbuf:--with-gdkpixbuf-force} \
-%{?_without_gdkimlib:	--without-gdkimlib}	%{!?_without_gdkimlib:	--with-gdkimlib-force} \
-%{?_without_glade:	--without-glade}	%{!?_without_glade:	--with-glade-force} \
-%{!?_with_gnome:	--without-gnome}	%{?_with_gnome:		--with-gnome-force} \
-%{?_without_gnomeprint:	--without-gnomeprint}	%{!?_without_gnomeprint:--with-gnomeprint-force} \
-%{?_without_gtkglarea:	--without-gtkglarea}	%{!?_without_gtkglarea:	--with-gtkglarea-force} \
-%{!?_with_gtkhtml:	--without-gtkhtml}	%{?_with_gtkhtml:	--with-gtkhtml-force} \
-%{?_without_gtkxmhtml:	--without-gtkxmhtml}	%{!?_without_gtkxmhtml:	--with-gtkxmhtml-force} \
-%{?_without_applets:	--without-applets}	%{!?_without_gnome:	--with-applets-force}
+%{!?with_gdk_pixbuf:	--without-gdkpixbuf}	%{?with_gdk_pixbuf:	--with-gdkpixbuf-force} \
+%{!?with_gdkimlib:	--without-gdkimlib}	%{?with_gdkimlib:	--with-gdkimlib-force} \
+%{!?with_glade:		--without-glade}	%{?with_glade:		--with-glade-force} \
+%{!?with_gnome:		--without-gnome}	%{?with_gnome:		--with-gnome-force} \
+%{!?with_gnomeprint:	--without-gnomeprint}	%{?with_gnomeprint:	--with-gnomeprint-force} \
+%{!?with_gtkglarea:	--without-gtkglarea}	%{?with_gtkglarea:	--with-gtkglarea-force} \
+%{!?with_gtkhtml:	--without-gtkhtml}	%{?with_gtkhtml:	--with-gtkhtml-force} \
+%{!?with_gtkxmhtml:	--without-gtkxmhtml}	%{?with_gtkxmhtml:	--with-gtkxmhtml-force} \
+%{!?with_applets:	--without-applets}	%{?with_applets:	--with-applets-force}
 
 %{__make} \
 	OPTIMIZE="%{rpmcflags}"
@@ -327,7 +330,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man3/Gtk.3pm*
 %{_mandir}/man3/Gtk::[Ca-z]*.3pm*
 
-%if %{?_without_gdkimlib:0}%{!?_without_gdkimlib:1}
+%if %{with gdkimlib}
 %files Gdk-ImlibImage
 %defattr(644,root,root,755)
 %{perl_vendorarch}/Gtk/Gdk/ImlibImage.pm
@@ -338,7 +341,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man3/Gtk::Gdk::ImlibImage*
 %endif
 
-%if %{?_without_gdk_pixbuf:0}%{!?_without_gdk_pixbuf:1}
+%if %{with gdk_pixbuf}
 %files Gdk-Pixbuf
 %defattr(644,root,root,755)
 %{perl_vendorarch}/Gtk/Gdk/Pixbuf.pm
@@ -349,7 +352,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man3/Gtk::Gdk::Pixbuf*
 %endif
 
-%if %{?_without_gtkglarea:0}%{!?_without_gtkglarea:1}
+%if %{with gtkglarea}
 %files GLArea
 %defattr(644,root,root,755)
 %{perl_vendorarch}/Gtk/GLArea.pm
@@ -361,7 +364,7 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_vendorarch}/auto/Gtk/GLArea/Constants/autosplit.ix
 %endif
 
-%if %{?_without_glade:0}%{!?_without_glade:1}
+%if %{with glade}
 %files GladeXML
 %defattr(644,root,root,755)
 %{perl_vendorarch}/Gtk/GladeXML.pm
@@ -373,7 +376,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man3/Gtk::GladeXML*
 %endif
 
-%if %{?_without_gtkxmhtml:0}%{!?_without_gtkxmhtml:1}
+%if %{with gtkxmhtml}
 %files XmHTML
 %defattr(644,root,root,755)
 %{perl_vendorarch}/Gtk/XmHTML.pm
@@ -383,7 +386,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{perl_vendorarch}/auto/Gtk/XmHTML/*.so
 %endif
 
-%if %{?_with_gtkhtml:1}%{!?_with_gtkhtml:0}
+%if %{with gtkhtml}
 %files HTML
 %defattr(644,root,root,755)
 %{perl_vendorarch}/Gtk/HTML.pm
@@ -393,7 +396,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{perl_vendorarch}/auto/Gtk/HTML/*.so
 %endif
 
-%if %{?_without_gnome:0}%{!?_without_gnome:1}
+%if %{with gnome}
 %files -n perl-gnome
 %defattr(644,root,root,755)
 %{perl_vendorarch}/Gnome.pm
@@ -406,7 +409,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man3/Gnome::reference.3pm*
 %endif
 
-%if %{?_without_gnomeprint:0}%{!?_without_gnomeprint:1}
+%if %{with gnomeprint}
 %files -n perl-gnome-Print
 %defattr(644,root,root,755)
 %{perl_vendorarch}/Gnome/Print.pm
@@ -417,7 +420,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man3/Gnome::Print*
 %endif
 
-%if %{?_without_applets:0}%{!?_without_applets:1}
+%if %{with applets}
 %files -n perl-gnome-Applet
 %defattr(644,root,root,755)
 %{perl_vendorarch}/Gnome/Applet.pm
