@@ -20,8 +20,8 @@
 %bcond_without	gtkxmhtml	# don't build Gtk::XmHTML module (gtkxmhtml library)
 #
 %include	/usr/lib/rpm/macros.perl
-%define		pdir	Gtk
-%define		pnam	Perl
+%define	pdir	Gtk
+%define	pnam	Perl
 Summary:	Perl extensions for Gtk+ (the Gimp ToolKit)
 Summary(cs):	Roz¹íøení Perlu pro Gtk+ (Gimp ToolKit)
 Summary(da):	Perl udvidelser for Gtk+
