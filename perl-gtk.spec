@@ -7,7 +7,7 @@ Copyright:	LGPL
 Group:		Development/Languages/Perl
 Group(pl):	Programowanie/Jêzyki/Perl
 Source:		ftp://www.gtk.org/pub/perl/Gtk-Perl-%{version}.tar.gz
-URL:		http://www.gtk.org
+URL:		http://www.gtk.org/
 BuildPreReq:	perl >= 5.004
 BuildPreReq:	gtk+-devel
 BuildPreReq:	glib-devel
