@@ -14,8 +14,6 @@
 #
 %{?_without_gnome:%define	_without_applets	1}
 %{?_without_gnome:%define	_without_gnomeprint	1}
-# because libgtkxmhtml is not separated from gnome-libs...:
-%{?_without_gnome:%define	_without_gtkxmhtml	1}
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	Gtk
 %define		pnam	Perl
@@ -51,6 +49,7 @@ URL:		http://www.gtkperl.org/
 BuildRequires:	gtk+-devel
 %{!?_without_gtkglarea:BuildRequires:	gtkglarea-devel}
 %{?_with_gtkhtml:BuildRequires:		gtkhtml-devel}
+%{!?_without_gtkxmhtml:BuildRequires:	gtkxmhtml-devel}
 %{!?_without_gdkimlib:BuildRequires:	imlib-devel}
 %{!?_without_glade:BuildRequires:	libglade-devel}
 BuildRequires:	perl-XML-Parser
