@@ -45,6 +45,7 @@ Patch1:		%{name}-gtkgl.patch
 URL:		http://www.gtkperl.org/
 %{!?_without_gdkpixbuf:BuildRequires:	gdk-pixbuf-devel}
 %{!?_without_applets:BuildRequires:	gnome-core-devel}
+%{!?_without_applets:BuildRequires:	control-center-devel}
 %{!?_without_gnome:BuildRequires:	gnome-libs-devel}
 %{!?_without_gnomeprint:BuildRequires:	gnome-print-devel}
 BuildRequires:	gtk+-devel
