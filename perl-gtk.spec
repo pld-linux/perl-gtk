@@ -1,15 +1,20 @@
 Summary:	Perl extention for gtk
 Summary(pl):	Rozszerzenie Perl dla Gtk
-Name:		Gtk-perl
-Version:	0.5000
-Release:	1d
+Name:		perl-gtk
+Version:	0.5121
+Release:	1
 Copyright:	LGPL
-Group:		X11/Libraries
-Group(pl):	X11/Biblioteki
-Source:		ftp://www.gtk.org/pub/perl/Gtk-%{version}.tar.gz
+Group:		Development/Languages/Perl
+Group(pl):	Programowanie/Jêzyki/Perl
+Source:		ftp://www.gtk.org/pub/perl/Gtk-Perl-%{version}.tar.gz
 URL:		http://www.gtk.org
-Requires:	perl >= 5.005_02
-Requires:	gtk+ = 1.1.15
+BuildPreReq:	perl >= 5.004
+BuildPreReq:	gtk+-devel
+BuildPreReq:	glib-devel
+BuildPreReq:	XFree86-devel
+BuildPrereq:	imlib-devel
+%requires_eq	perl
+Obsoletes:	Gtk-perl
 Buildroot:	/tmp/%{name}-%{version}-root
 
 %description
@@ -20,10 +25,14 @@ Gtk+-perl pozwoli ci na pisanie interfejsu graficznego przy u¿yciu
 perl'a i gtk.
 
 %prep
-%setup -q -n Gtk-%{version}
-perl Makefile.PL
+%setup -q -n Gtk-Perl-%{version}
 
 %build
+perl Makefile.PL \
+	--without-gnome \
+	--without-gnome-panel \
+	--without-gnome-zvt
+
 make OPTIMIZE="$RPM_OPT_FLAGS"
 
 %install
@@ -42,12 +51,12 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README.gz
 
-%attr(755,root,root) %{_libdir}/perl5/site_perl/*/*/auto/Gtk/Gtk.so
-%{_libdir}/perl5/site_perl/*/*/*.pm
-%{_libdir}/perl5/site_perl/*/*/Gtk
-%{_libdir}/perl5/site_perl/*/*/auto/Gtk/Gtk.bs
-%dir %{_libdir}/perl5/site_perl/*/*/auto/Gtk
-%dir %{_libdir}/perl5/site_perl/*/*/auto/Gtk/Gdk
+%attr(755,root,root) %{perl_sitearch}/auto/Gtk/Gtk.so
+%{perl_sitearch}/*.pm
+%{perl_sitearch}/Gtk
+%{perl_sitearch}/auto/Gtk/Gtk.bs
+%dir %{perl_sitearch}/auto/Gtk
+%dir %{perl_sitearch}/auto/Gtk/Gdk
 %{_mandir}/man3/*
 
 %changelog
