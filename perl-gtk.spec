@@ -3,7 +3,7 @@ Summary:	Perl extensions for Gtk+ (the Gimp ToolKit)
 Summary(pl):	Rozszerzenie Perl dla Gtk
 Name:		perl-gtk
 Version:	0.7000
-Release:	1
+Release:	2
 License:	LGPL
 Group:		Development/Languages/Perl
 Group(pl):	Programowanie/Jêzyki/Perl
@@ -53,10 +53,7 @@ sed -e "s#$RPM_BUILD_ROOT##g" \
 mv $RPM_BUILD_ROOT%{perl_sitearch}/auto/Gtk/.packlist.wrk \
 	        $RPM_BUILD_ROOT%{perl_sitearch}/auto/Gtk/.packlist
 
-strip --strip-unneeded $RPM_BUILD_ROOT%{perl_sitearch}/auto/*/*.so
-
-gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man3/* \
-	README
+gzip -9nf README
 
 %clean
 rm -rf $RPM_BUILD_ROOT
