@@ -14,8 +14,6 @@ BuildRequires:	perl >= 5.005_03-10
 BuildRequires:	gtk+-devel
 BuildRequires:	imlib-devel
 BuildRequires:	rpm-perlprov
-%requires_eq	perl
-Requires:	%{perl_sitearch}
 Obsoletes:	Gtk-perl
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
