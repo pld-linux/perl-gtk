@@ -36,7 +36,7 @@ Summary(sl):	Perlovske raz¹iritve za Gtk+ (Gimp ToolKit)
 Summary(sv):	Perl-utvidgning för Gtk+ (the Gimp ToolKit)
 Name:		perl-gtk
 Version:	0.7008
-Release:	12
+Release:	13
 License:	LGPL
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
@@ -276,6 +276,7 @@ Summary:	applets support for perl-gnome
 Summary(pl):	Obs³uga apletów dla perl-gnome
 Group:		Development/Languages/Perl
 Requires:	perl-gnome = %{version}
+%{!?_without_applets:Provides:	perl(Gnome::Applet::Types)}
 
 %description -n perl-gnome-Applet
 Gnome::Applet module - applets support for perl-gnome.
