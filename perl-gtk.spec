@@ -1,5 +1,5 @@
 %include	/usr/lib/rpm/macros.perl
-Summary:	Perl extention for gtk
+Summary:	Perl extensions for Gtk+ (the Gimp ToolKit)
 Summary(pl):	Rozszerzenie Perl dla Gtk
 Name:		perl-gtk
 Version:	0.6123
@@ -21,7 +21,11 @@ Obsoletes:	Gtk-perl
 Buildroot:	/tmp/%{name}-%{version}-root
 
 %description
-gtk+-perl allows you to write graphical interfaces using perl and gtk.
+This package includes Perl extensions for Gtk+ (the Gimp ToolKit), a library
+used for creating graphical user interfaces for the X Window System. The
+extensions provided in this package allow you to write graphical interfaces
+using Perl and Gtk+. If you install this package, you'll need to also have
+Perl and Gtk+ installed.
 
 %description -l pl
 Gtk+-perl pozwoli ci na pisanie interfejsu graficznego przy u¿yciu
