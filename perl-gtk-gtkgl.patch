@@ -5,7 +5,7 @@
  
  $gl->set_inc (`gtk-config --cflags`);
 -$libs = "-lgtkgl  -lMesaGL -lMesaGLU " . `gtk-config --libs`;
-+$libs = "-L/usr/X11R6/lib -lgtkgl  -lMesaGL -lMesaGLU " . `gtk-config --libs`;
++$libs = "-L/usr/X11R6/lib -lgtkgl  -lGL -lGLU " . `gtk-config --libs`;
  chomp($libs);
  $nomesa = $libs;
  $nomesa =~ s/Mesa//g;

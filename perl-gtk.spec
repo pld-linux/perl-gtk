@@ -33,15 +33,15 @@ Summary(ru):	òÁÓÛÉÒÅÎÎÁÑ ×ÅÒÓÉÑ Perl ÄÌÑ Gtk+ (Gimp Toolkit)
 Summary(sl):	Perlovske raz¹iritve za Gtk+ (Gimp ToolKit)
 Summary(sv):	Perl-utvidgning för Gtk+ (the Gimp ToolKit)
 Name:		perl-gtk
-Version:	0.7008
-Release:	15
+Version:	0.7009
+Release:	1
 License:	LGPL
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5: b499abb5db7794f200abbf07879dd65d
+# Source0-md5:	72ce462caa1afe57d60a8e654d63204b
 Patch0:		%{name}-fix.patch
 Patch1:		%{name}-gtkgl.patch
-Patch2:		%{name}-perl5.8.patch
+Patch2:		%{name}-inc.patch
 URL:		http://www.gtkperl.org/
 %{!?_without_gdkpixbuf:BuildRequires:	gdk-pixbuf-devel}
 %{!?_without_applets:BuildRequires:	gnome-core-devel}
@@ -53,7 +53,7 @@ BuildRequires:	gtk+-devel >= 1.2.0
 %{?_with_gtkhtml:BuildRequires:		gtkhtml-devel}
 %{!?_without_gtkxmhtml:BuildRequires:	gtkxmhtml-devel}
 %{!?_without_gdkimlib:BuildRequires:	imlib-devel}
-%{!?_without_glade:BuildRequires:	libglade-devel < 1.99}
+%{!?_without_glade:BuildRequires:	libglade-devel < 1:1.99}
 BuildRequires:	perl-XML-Parser
 BuildRequires:	perl-XML-Writer
 BuildRequires:	perl-devel >= 5.005_03-10
@@ -296,7 +296,8 @@ Modu³ Gnome::Applet - obs³uga apletów dla perl-gnome.
 %{?_without_gtkxmhtml:	--without-gtkxmhtml}	%{!?_without_gtkxmhtml:	--with-gtkxmhtml-force} \
 %{?_without_applets:	--without-applets}	%{!?_without_gnome:	--with-applets-force}
 
-%{__make} OPTIMIZE="%{rpmcflags}"
+%{__make} \
+	OPTIMIZE="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT

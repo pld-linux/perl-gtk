@@ -1,0 +1,17 @@
+--- Gtk-Perl-0.7009/Depends.pm.orig	2001-02-11 23:39:10.000000000 +0100
++++ Gtk-Perl-0.7009/Depends.pm	2003-07-12 20:33:19.000000000 +0200
+@@ -53,12 +53,14 @@
+ 	my ($self, $libs) = @_;
+ 	chomp($libs);
+ 	$self->{_libs_} = $libs;
++	$::libs = $libs;
+ }
+ 
+ sub set_inc {
+ 	my ($self, $inc) = @_;
+ 	chomp($inc);
+ 	$self->{_inc_} = $inc;
++	$::inc = $inc;
+ }
+ 
+ # load dependencies ...
