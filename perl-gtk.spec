@@ -214,30 +214,30 @@ Gtk::HTML module - gtkhtml library support for perl-gtk.
 Modu³ Gtk::HTML - obs³uga biblioteki gtkhtml dla perl-gtk.
 
 %package -n perl-gnome
-Summary:	Perl extensions for Gnome
-Summary(cs):	Roz¹íøení Perlu pro Gnome
-Summary(da):	Perl udvidelser for Gnome
-Summary(de):	Perl-Erweiterungen für Gnome
-Summary(es):	Extensiones Perl para Gnome
-Summary(fr):	Extensions Perl pour Gnome
-Summary(it):	Estensioni Perl per Gnome
-Summary(ja):	Gnome ÍÑ¤Î Perl ³ÈÄ¥
-Summary(no):	Perlmodul for Gnome
-Summary(pl):	Rozszerzenie Perl dla Gnome
-Summary(pt):	Uma extensão de Perl para o Gnome
-Summary(pt_BR):	Extensões Perl para o Gnome
-Summary(ru):	òÁÓÛÉÒÅÎÎÁÑ ×ÅÒÓÉÑ Perl ÄÌÑ Gnome
-Summary(sl):	Perlovske raz¹iritve za Gnome
-Summary(sv):	Perl-utvidgning för Gnome
+Summary:	Perl extensions for GNOME
+Summary(cs):	Roz¹íøení Perlu pro GNOME
+Summary(da):	Perl udvidelser for GNOME
+Summary(de):	Perl-Erweiterungen für GNOME
+Summary(es):	Extensiones Perl para GNOME
+Summary(fr):	Extensions Perl pour GNOME
+Summary(it):	Estensioni Perl per GNOME
+Summary(ja):	GNOME ÍÑ¤Î Perl ³ÈÄ¥
+Summary(no):	Perlmodul for GNOME
+Summary(pl):	Rozszerzenie Perl dla GNOME
+Summary(pt):	Uma extensão de Perl para o GNOME
+Summary(pt_BR):	Extensões Perl para o GNOME
+Summary(ru):	òÁÓÛÉÒÅÎÎÁÑ ×ÅÒÓÉÑ Perl ÄÌÑ GNOME
+Summary(sl):	Perlovske raz¹iritve za GNOME
+Summary(sv):	Perl-utvidgning för GNOME
 Group:		Development/Languages/Perl
 Requires:	%{name} = %{version}
 Requires:	%{name}-Gdk-ImlibImage = %{version}
 
 %description -n perl-gnome
-This package includes Perl extensions for Gnome.
+This package includes Perl extensions for GNOME.
 
 %description -n perl-gnome -l pl
-Ten pakiet zawiera rozszerzenia perla dla Gnome.
+Ten pakiet zawiera rozszerzenia perla dla GNOME.
 
 %package -n perl-gnome-Print
 Summary:	Perl extensions for GnomePrint
