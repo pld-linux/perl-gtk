@@ -4,10 +4,10 @@ Summary(pl):	Rozszerzenie Perl dla Gtk
 Name:		perl-gtk
 Version:	0.7000
 Release:	1
-Copyright:	LGPL
+License:	LGPL
 Group:		Development/Languages/Perl
 Group(pl):	Programowanie/Jêzyki/Perl
-Source:		ftp://www.gtk.org/pub/perl/Gtk-Perl-%{version}.tar.gz
+Source0:	ftp://www.gtk.org/pub/perl/Gtk-Perl-%{version}.tar.gz
 URL:		http://www.gtk.org/
 BuildRequires:	perl >= 5.005_03-10
 BuildRequires:	gtk+-devel
@@ -19,11 +19,11 @@ Obsoletes:	Gtk-perl
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-This package includes Perl extensions for Gtk+ (the Gimp ToolKit), a library
-used for creating graphical user interfaces for the X Window System. The
-extensions provided in this package allow you to write graphical interfaces
-using Perl and Gtk+. If you install this package, you'll need to also have
-Perl and Gtk+ installed.
+This package includes Perl extensions for Gtk+ (the Gimp ToolKit), a
+library used for creating graphical user interfaces for the X Window
+System. The extensions provided in this package allow you to write
+graphical interfaces using Perl and Gtk+. If you install this package,
+you'll need to also have Perl and Gtk+ installed.
 
 %description -l pl
 Gtk+-perl pozwoli ci na pisanie interfejsu graficznego przy u¿yciu
