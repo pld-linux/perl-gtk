@@ -38,6 +38,7 @@ Release:	15
 License:	LGPL
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
+# Source0-md5: b499abb5db7794f200abbf07879dd65d
 Patch0:		%{name}-fix.patch
 Patch1:		%{name}-gtkgl.patch
 Patch2:		%{name}-perl5.8.patch
