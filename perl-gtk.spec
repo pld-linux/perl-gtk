@@ -40,24 +40,24 @@ Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 Patch0:		%{name}-fix.patch
 Patch1:		%{name}-gtkgl.patch
+Patch2:		%{name}-perl5.8.patch
 URL:		http://www.gtkperl.org/
 %{!?_without_gdkpixbuf:BuildRequires:	gdk-pixbuf-devel}
 %{!?_without_applets:BuildRequires:	gnome-core-devel}
-%{!?_without_applets:BuildRequires:	control-center-devel}
+%{!?_without_applets:BuildRequires:	control-center-devel < 1.99}
 %{!?_without_gnome:BuildRequires:	gnome-libs-devel}
 %{!?_without_gnomeprint:BuildRequires:	gnome-print-devel}
-BuildRequires:	gtk+-devel
-%{!?_without_gtkglarea:BuildRequires:	gtkglarea-devel}
+BuildRequires:	gtk+-devel >= 1.2.0
+%{!?_without_gtkglarea:BuildRequires:	gtkglarea1-devel < 1.99}
 %{?_with_gtkhtml:BuildRequires:		gtkhtml-devel}
 %{!?_without_gtkxmhtml:BuildRequires:	gtkxmhtml-devel}
 %{!?_without_gdkimlib:BuildRequires:	imlib-devel}
-%{!?_without_glade:BuildRequires:	libglade-devel}
+%{!?_without_glade:BuildRequires:	libglade-devel < 1.99}
 BuildRequires:	perl-XML-Parser
 BuildRequires:	perl-XML-Writer
 BuildRequires:	perl-devel >= 5.005_03-10
-BuildRequires:	rpm-perlprov
+BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-Provides:	perl(Gtk::TypesLazy)
 Obsoletes:	Gtk-perl
 
 %description
@@ -156,7 +156,6 @@ Summary:	Gdk-Pixbuf support for perl-gtk
 Summary(pl):	Obs³uga Gdk-Pixbuf dla perl-gtk
 Group:		Development/Languages/Perl
 Requires:	%{name} = %{version}
-Provides:	perl(Gtk::Gdk::Pixbuf::Types)
 
 %description Gdk-Pixbuf
 Gtk::Gdk::Pixbuf module - Gdk-Pixbuf library support for perl-gtk.
@@ -169,7 +168,6 @@ Summary:	Gtk-GLArea support for perl-gtk
 Summary(pl):	Obs³uga Gtk-GLArea dla perl-gtk
 Group:		Development/Languages/Perl
 Requires:	%{name} = %{version}
-Provides:	perl(Gtk::GLArea::Types)
 
 %description GLArea
 Gtk::GLArea module - Gtk-GLArea library support for perl-gtk.
@@ -182,7 +180,6 @@ Summary:	libglade support for perl-gtk
 Summary(pl):	Obs³uga libglade dla perl-gtk
 Group:		Development/Languages/Perl
 Requires:	%{name} = %{version}
-Provides:	perl(Gtk::GladeXML::Types)
 
 %description GladeXML
 Gtk::GladeXML module - libglade library support for perl-gtk.
@@ -195,7 +192,6 @@ Summary:	XmHTML support for perl-gtk
 Summary(pl):	Obs³uga XmHTML dla perl-gtk
 Group:		Development/Languages/Perl
 Requires:	%{name} = %{version}
-Provides:	perl(Gtk::XmHTML::Types)
 
 %description XmHTML
 Gtk::XmHTML module - gtkxmhtml library support for perl-gtk.
@@ -234,7 +230,6 @@ Summary(sv):	Perl-utvidgning för Gnome
 Group:		Development/Languages/Perl
 Requires:	%{name} = %{version}
 Requires:	%{name}-Gdk-ImlibImage = %{version}
-Provides:	perl(Gnome::TypesLazy)
 
 %description -n perl-gnome
 This package includes Perl extensions for Gnome.
@@ -261,8 +256,6 @@ Summary(sv):	Perl-utvidgning för GnomePrint
 Group:		Development/Languages/Perl
 Requires:	perl-gnome = %{version}
 Requires:	%{name}-Gdk-Pixbuf = %{version}
-Provides:	perl(Gnome::Print::Types)
-Provides:	perl(Gnome::Print::TypesLazy)
 
 %description -n perl-gnome-Print
 This package includes Perl extensions for GnomePrint.
@@ -275,7 +268,6 @@ Summary:	applets support for perl-gnome
 Summary(pl):	Obs³uga apletów dla perl-gnome
 Group:		Development/Languages/Perl
 Requires:	perl-gnome = %{version}
-Provides:	perl(Gnome::Applet::Types)
 
 %description -n perl-gnome-Applet
 Gnome::Applet module - applets support for perl-gnome.
@@ -287,6 +279,7 @@ Modu³ Gnome::Applet - obs³uga apletów dla perl-gnome.
 %setup -q -n %{pdir}-%{pnam}-%{version}
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 %{__perl} Makefile.PL \
