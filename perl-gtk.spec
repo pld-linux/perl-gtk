@@ -59,28 +59,3 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{perl_sitearch}/auto/Gtk
 %dir %{perl_sitearch}/auto/Gtk/Gdk
 %{_mandir}/man3/*
-
-%changelog
-* Fri Feb 05 1999 Wojtek ¦lusarczyk <wojtek@shadow.eu.org>
-  [0.5000-1d]
-- updated to 0.5000,
-- compressed man pages && documentation.
-
-* Sat Nov 21 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
-  [0.3-2]
-- simplifications in %files and %install.
-
-* Tue Jul 14 1998 Wojtek ¦lusarczyk <wojtek@shadow.eu.org>
-  [0.3-1]
-- added pl translation,
-- added build-root support,
-- build against GNU libc-2.1.
-- minor modyfications of spec.
-
-* Tue Jul 14 1998 The Rasterman <raster@redhat.com>
-- Made it rebuild on multiple architectures (still linux only tho)
-- this NEEDS to be buildrooted. not willign to do that quite yet.
-
-* Fri Jul 10 1998 Jeff Carr <jcarr@linuxppc.org>
-- Turned of -O2 on the ppc version
-- I'm not sure about the LGPL part
