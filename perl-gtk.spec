@@ -7,8 +7,9 @@
 %{?_without_gnome:%global	_without_gnomeprint	1}
 #
 # Conditional build:
+%bcond_with	tests		# perform "make test" (require valid DISPLAY)
 %bcond_with	gtkhtml		# build Gtk::HTML module (gtkhtml library)
-%bcond_with	applets		# don't build Gnome::Applet module (gnome-applets libs) [NFY]
+%bcond_with	applets		# build Gnome::Applet module (gnome-applets libs) [NFY]
 %bcond_without	gdkimlib	# don't build Gtk::Gdk::ImlibImage module (imlib library)
 %bcond_without	gdk_pixbuf	# don't build Gtk::Gdk::Pixbuf module (gdk-pixbuf library)
 %bcond_without	glade		# don't build Gtk::GladeXML module (libglade library)
@@ -39,7 +40,8 @@ Summary(sv):	Perl-utvidgning för Gtk+ (the Gimp ToolKit)
 Name:		perl-gtk
 Version:	0.7009
 Release:	1
-License:	LGPL
+# same as perl or LGPL
+License:	LGPL or GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	72ce462caa1afe57d60a8e654d63204b
@@ -302,6 +304,8 @@ Modu³ Gnome::Applet - obs³uga apletów dla perl-gnome.
 
 %{__make} \
 	OPTIMIZE="%{rpmcflags}"
+
+%{?with_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
