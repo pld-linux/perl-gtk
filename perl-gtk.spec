@@ -5,7 +5,7 @@
 # _with_gtkhtml		- with Gtk::HTML module (gtkhtml library)
 # _without_applets	- without Gnome::Applet module (gnome-applets libraries) [not done yet]
 # _without_gdkimlib	- without Gtk::Gdk::ImlibImage module (imlib library)
-# _without_gdkpixbuf	- without Gtk::Gdk::Pixbuf module (gdk-pixbuf library)
+# _without_gdk_pixbuf	- without Gtk::Gdk::Pixbuf module (gdk-pixbuf library)
 # _without_glade	- without Gtk::GladeXML module (libglade library)
 # _with_gnome		- with Gnome module (gnome-libs)
 # _without_gnomeprint	- without Gnome::Print module (gnome-print library)
@@ -44,7 +44,7 @@ Patch0:		%{name}-fix.patch
 Patch1:		%{name}-gtkgl.patch
 Patch2:		%{name}-inc.patch
 URL:		http://www.gtkperl.org/
-%{!?_without_gdkpixbuf:BuildRequires:	gdk-pixbuf-devel}
+%{!?_without_gdk_pixbuf:BuildRequires:	gdk-pixbuf-devel}
 %{!?_without_applets:BuildRequires:	gnome-core-devel}
 %{!?_without_applets:BuildRequires:	control-center-devel < 1.99}
 %{?_with_gnome:BuildRequires:	gnome-libs-devel}
@@ -287,7 +287,7 @@ Modu³ Gnome::Applet - obs³uga apletów dla perl-gnome.
 %{__perl} Makefile.PL \
 	INSTALLDIRS=vendor \
 	--without-guessing \
-%{?_without_gdkpixbuf:	--without-gdkpixbuf}	%{!?_without_gdkpixbuf:	--with-gdkpixbuf-force} \
+%{?_without_gdk_pixbuf:	--without-gdkpixbuf}	%{!?_without_gdk_pixbuf:--with-gdkpixbuf-force} \
 %{?_without_gdkimlib:	--without-gdkimlib}	%{!?_without_gdkimlib:	--with-gdkimlib-force} \
 %{?_without_glade:	--without-glade}	%{!?_without_glade:	--with-glade-force} \
 %{!?_with_gnome:	--without-gnome}	%{?_with_gnome:		--with-gnome-force} \
@@ -338,7 +338,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man3/Gtk::Gdk::ImlibImage*
 %endif
 
-%if %{?_without_gdkpixbuf:0}%{!?_without_gdkpixbuf:1}
+%if %{?_without_gdk_pixbuf:0}%{!?_without_gdk_pixbuf:1}
 %files Gdk-Pixbuf
 %defattr(644,root,root,755)
 %{perl_vendorarch}/Gtk/Gdk/Pixbuf.pm
