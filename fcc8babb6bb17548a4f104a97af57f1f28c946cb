@@ -1,0 +1,2 @@
+- _without_gnome, added conditional BuildRequires for gnome-libs-devel
+- BuildRequires: perl-XML-Parser, perl-XML-Writer
