@@ -1,0 +1,10 @@
+--- Gtk-Perl-0.7006/tools/gpdoc2pod~	Sat Mar 17 12:48:10 2001
++++ Gtk-Perl-0.7006/tools/gpdoc2pod	Sun Apr 29 20:18:28 2001
+@@ -30,6 +30,7 @@
+ 
+ Reference documentation for the $::opt_t module
+ 
++=cut
+ EOF
+ 
+ $parser->parsefile($file);
