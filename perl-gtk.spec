@@ -36,7 +36,7 @@ Summary(sl):	Perlovske raz¹iritve za Gtk+ (Gimp ToolKit)
 Summary(sv):	Perl-utvidgning för Gtk+ (the Gimp ToolKit)
 Name:		perl-gtk
 Version:	0.7008
-Release:	13
+Release:	14
 License:	LGPL
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
@@ -58,7 +58,6 @@ BuildRequires:	perl-XML-Writer
 BuildRequires:	perl-devel >= 5.005_03-10
 BuildRequires:	rpm-perlprov >= 4.0.2-104
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-Provides:	perl(Gtk::TypesLazy)
 Obsoletes:	Gtk-perl
 
 %description
@@ -157,7 +156,6 @@ Summary:	Gdk-Pixbuf support for perl-gtk
 Summary(pl):	Obs³uga Gdk-Pixbuf dla perl-gtk
 Group:		Development/Languages/Perl
 Requires:	%{name} = %{version}
-Provides:	perl(Gtk::Gdk::Pixbuf::Types)
 
 %description Gdk-Pixbuf
 Gtk::Gdk::Pixbuf module - Gdk-Pixbuf library support for perl-gtk.
@@ -170,7 +168,6 @@ Summary:	Gtk-GLArea support for perl-gtk
 Summary(pl):	Obs³uga Gtk-GLArea dla perl-gtk
 Group:		Development/Languages/Perl
 Requires:	%{name} = %{version}
-Provides:	perl(Gtk::GLArea::Types)
 
 %description GLArea
 Gtk::GLArea module - Gtk-GLArea library support for perl-gtk.
@@ -183,7 +180,6 @@ Summary:	libglade support for perl-gtk
 Summary(pl):	Obs³uga libglade dla perl-gtk
 Group:		Development/Languages/Perl
 Requires:	%{name} = %{version}
-Provides:	perl(Gtk::GladeXML::Types)
 
 %description GladeXML
 Gtk::GladeXML module - libglade library support for perl-gtk.
@@ -196,7 +192,6 @@ Summary:	XmHTML support for perl-gtk
 Summary(pl):	Obs³uga XmHTML dla perl-gtk
 Group:		Development/Languages/Perl
 Requires:	%{name} = %{version}
-Provides:	perl(Gtk::XmHTML::Types)
 
 %description XmHTML
 Gtk::XmHTML module - gtkxmhtml library support for perl-gtk.
@@ -235,7 +230,6 @@ Summary(sv):	Perl-utvidgning för Gnome
 Group:		Development/Languages/Perl
 Requires:	%{name} = %{version}
 Requires:	%{name}-Gdk-ImlibImage = %{version}
-Provides:	perl(Gnome::TypesLazy)
 
 %description -n perl-gnome
 This package includes Perl extensions for Gnome.
@@ -262,8 +256,6 @@ Summary(sv):	Perl-utvidgning för GnomePrint
 Group:		Development/Languages/Perl
 Requires:	perl-gnome = %{version}
 Requires:	%{name}-Gdk-Pixbuf = %{version}
-Provides:	perl(Gnome::Print::Types)
-Provides:	perl(Gnome::Print::TypesLazy)
 
 %description -n perl-gnome-Print
 This package includes Perl extensions for GnomePrint.
@@ -276,7 +268,6 @@ Summary:	applets support for perl-gnome
 Summary(pl):	Obs³uga apletów dla perl-gnome
 Group:		Development/Languages/Perl
 Requires:	perl-gnome = %{version}
-Provides:	perl(Gnome::Applet::Types)
 
 %description -n perl-gnome-Applet
 Gnome::Applet module - applets support for perl-gnome.
