@@ -2,8 +2,8 @@
 Summary:	Perl extensions for Gtk+ (the Gimp ToolKit)
 Summary(pl):	Rozszerzenie Perl dla Gtk
 Name:		perl-gtk
-Version:	0.6123
-Release:	2
+Version:	0.7000
+Release:	1
 Copyright:	LGPL
 Group:		Development/Languages/Perl
 Group(pl):	Programowanie/Jêzyki/Perl
