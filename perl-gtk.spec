@@ -3,9 +3,16 @@
 %define	pnam	Perl
 #
 # Conditional build:
+# _with_gtkhtml
+# _without_gdkimlib
+# _without_gdkpixbuf
+# _without_glade
 # _without_gnome
+# _without_gnomeprint
+# _without_gtkglarea
+# _without_gtkhtml
 #
-%define		_noautoreq "perl(Gtk::TypesLazy)" "perl(Gnome::TypesLazy)"
+%define		_noautoreq "perl(Gtk::TypesLazy)" "perl(Gnome::TypesLazy)" "perl(Gtk::GLArea::Types)" "perl(Gtk::Gdk::Pixbuf::Types)" "perl(Gtk::GladeXML::Types)"
 Summary:	Perl extensions for Gtk+ (the Gimp ToolKit)
 Summary(cs):	Roz¹íøení Perlu pro Gtk+ (Gimp ToolKit)
 Summary(da):	Perl udvidelser for Gtk+
@@ -23,7 +30,7 @@ Summary(sl):	Perlovske raz¹iritve za Gtk+ (Gimp ToolKit)
 Summary(sv):	Perl-utvidgning för Gtk+ (the Gimp ToolKit)
 Name:		perl-gtk
 Version:	0.7008
-Release:	10
+Release:	10.1
 License:	LGPL
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
@@ -33,6 +40,12 @@ BuildRequires:	perl >= 5.005_03-10
 BuildRequires:	gtk+-devel
 %{!?_without_gnome:BuildRequires: gnome-libs-devel}
 BuildRequires:	imlib-devel
+%{!?_without_gdkimlib:BuildRequires: imlib-devel}
+%{!?_without_gtkglarea:BuildRequires: gtkglarea-devel}
+%{!?_without_gdkpixbuf:BuildRequires: gdk-pixbuf-devel}
+%{?_with_gtkhtml:BuildRequires: gtkhtml-devel}
+%{!?_without_gnomeprint:BuildRequires: gnome-print-devel}
+%{!?_without_glade:BuildRequires: libglade-devel}
 BuildRequires:	perl-XML-Parser
 BuildRequires:	perl-XML-Writer
 BuildRequires:	rpm-perlprov
@@ -150,8 +163,14 @@ Ten pakiet zawiera rozszerzenia perla dla Gnome.
 %build
 perl Makefile.PL \
 	--without-guessing \
-	--with-gdkimlib \
-	%{?_without_gnome:--without-gnome}%{!?_without_gnome:--with-gnome}
+	%{?_without_gnome:--without-gnome}%{!?_without_gnome:--with-gnome-force} \
+	%{?_without_gdkimlib:--without-gdkimlib}%{!?_without_gdkimlib:--with-gdkimlib-force} \
+	%{?_without_gtkglarea:--without-gtkglarea}%{!?_without_gtkglarea:--with-gtkglarea-force} \
+	%{?_without_gdkpixbuf:--without-gdkpixbuf}%{!?_without_gdkpixbuf:--with-gdkpixbuf-force} \
+	%{?!_with_gtkhtml:--without-gtkhtml}%{?_with_gtkhtml:--with-gtkhtml-force} \
+	%{?_without_gnomeprint:--without-gnomeprint}%{!?_without_gnomeprint:--with-gnomeprint-force} \
+	%{?_without_glade:--without-glade}%{!?_without_glade:--with-glade-force}
+	#%{?_without_gnome:--without-applets}%{!?_without_gnome:--with-applets-force} \
 
 %{__make} OPTIMIZE="%{rpmcflags}"
 
