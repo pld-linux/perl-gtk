@@ -1,14 +1,16 @@
+%define		_noautoreq "perl(Gtk::TypesLazy)" "perl(Gnome::TypesLazy)"
 %include	/usr/lib/rpm/macros.perl
 Summary:	Perl extensions for Gtk+ (the Gimp ToolKit)
 Summary(pl):	Rozszerzenie Perl dla Gtk
 Name:		perl-gtk
-Version:	0.7000
-Release:	3
+Version:	0.7006
+Release:	1
 License:	LGPL
 Group:		Development/Languages/Perl
 Group(de):	Entwicklung/Sprachen/Perl
 Group(pl):	Programowanie/Jêzyki/Perl
 Source0:	ftp://www.gtk.org/pub/perl/Gtk-Perl-%{version}.tar.gz
+Patch0:		perl-gtk-fix.patch
 URL:		http://www.gtk.org/
 BuildRequires:	perl >= 5.005_03-10
 BuildRequires:	gtk+-devel
@@ -28,14 +30,26 @@ you'll need to also have Perl and Gtk+ installed.
 Gtk+-perl pozwoli ci na pisanie interfejsu graficznego przy u¿yciu
 perl'a i gtk.
 
+%package -n perl-gnome
+Summary:	Perl extensions for Gnome
+Summary(pl):	Rozszerzenie Perl dla Gnome
+Group:		Development/Languages/Perl
+Group(de):	Entwicklung/Sprachen/Perl
+Group(pl):	Programowanie/Jêzyki/Perl
+Requires:	%{name} = %{version}
+
+%description -n perl-gnome
+This package includes Perl extensions for Gnome.
+
 %prep
 %setup -q -n Gtk-Perl-%{version}
+%patch0 -p1
 
 %build
 perl Makefile.PL \
-	--without-gnome \
-	--without-gnome-panel \
-	--without-gnome-zvt
+	--without-guessing \
+	--with-gdkimlib \
+	--with-gnome
 
 %{__make} OPTIMIZE="%{?debug:-O0 -g}%{!?debug:$RPM_OPT_FLAGS}"
 
@@ -54,9 +68,22 @@ rm -rf $RPM_BUILD_ROOT
 %files 
 %defattr(644,root,root,755)
 %doc *.gz
-%attr(755,root,root) %{perl_sitearch}/auto/Gtk/Gtk.so
-%{perl_sitearch}/*.pm
 %{perl_sitearch}/Gtk
+%{perl_sitearch}/Gtk.pm
+%dir %{perl_sitearch}/auto/Gtk
+%dir %{perl_sitearch}/auto/Gtk/Gdk
+%dir %{perl_sitearch}/auto/Gtk/Gdk/ImlibImage
 %{perl_sitearch}/auto/Gtk/Gtk.bs
-%{perl_sitearch}/auto/Gtk/Gdk
-%{_mandir}/man3/*
+%attr(755,root,root) %{perl_sitearch}/auto/Gtk/Gtk.so
+%{perl_sitearch}/auto/Gtk/Gdk/ImlibImage/ImlibImage.bs
+%attr(755,root,root) %{perl_sitearch}/auto/Gtk/Gdk/ImlibImage/ImlibImage.so
+%{_mandir}/man3/Gtk*
+
+%files -n perl-gnome
+%defattr(644,root,root,755)
+%{perl_sitearch}/Gnome
+%{perl_sitearch}/Gnome.pm
+%dir %{perl_sitearch}/auto/Gnome
+%{perl_sitearch}/auto/Gnome/Gnome.bs
+%attr(755,root,root) %{perl_sitearch}/auto/Gnome/Gnome.so
+%{_mandir}/man3/Gnome*
