@@ -15,7 +15,7 @@ License:	LGPL
 Group:		Development/Languages/Perl
 Group(de):	Entwicklung/Sprachen/Perl
 Group(pl):	Programowanie/Jêzyki/Perl
-Source0:	http://www.gtkperl.org/Gtk-Perl-%{version}.tar.gz
+Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/Gtk/Gtk-Perl-%{version}.tar.gz
 Patch0:		%{name}-fix.patch
 URL:		http://www.gtkperl.org/
 BuildRequires:	perl >= 5.005_03-10
