@@ -1,3 +1,4 @@
+%include	/usr/lib/rpm/macros.perl
 Summary:	Perl extention for gtk
 Summary(pl):	Rozszerzenie Perl dla Gtk
 Name:		perl-gtk
