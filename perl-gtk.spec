@@ -36,7 +36,7 @@ Summary(sl):	Perlovske raz¹iritve za Gtk+ (Gimp ToolKit)
 Summary(sv):	Perl-utvidgning för Gtk+ (the Gimp ToolKit)
 Name:		perl-gtk
 Version:	0.7008
-Release:	13
+Release:	14
 License:	LGPL
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
@@ -291,6 +291,7 @@ Modu³ Gnome::Applet - obs³uga apletów dla perl-gnome.
 
 %build
 %{__perl} Makefile.PL \
+	INSTALLDIRS=vendor \
 	--without-guessing \
 %{?_without_gdkpixbuf:	--without-gdkpixbuf}	%{!?_without_gdkpixbuf:	--with-gdkpixbuf-force} \
 %{?_without_gdkimlib:	--without-gdkimlib}	%{!?_without_gdkimlib:	--with-gdkimlib-force} \
@@ -306,7 +307,7 @@ Modu³ Gnome::Applet - obs³uga apletów dla perl-gnome.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{perl_archlib}
+install -d $RPM_BUILD_ROOT%{perl_vendorarch}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
@@ -317,95 +318,95 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README
-%{perl_sitearch}/Gtk.pm
-%dir %{perl_sitearch}/Gtk
-%{perl_sitearch}/Gtk/[ACIKLTil]*
-%{perl_sitearch}/Gtk/Gdk.pm
-%dir %{perl_sitearch}/Gtk/Gdk
-%dir %{perl_sitearch}/auto/Gtk
-%{perl_sitearch}/auto/Gtk/Gtk.bs
-%{perl_sitearch}/auto/Gtk/autosplit.ix
-%attr(755,root,root) %{perl_sitearch}/auto/Gtk/Gtk.so
-%dir %{perl_sitearch}/auto/Gtk/Gdk
-%{perl_sitearch}/auto/Gtk/Gdk/autosplit.ix
+%{perl_vendorarch}/Gtk.pm
+%dir %{perl_vendorarch}/Gtk
+%{perl_vendorarch}/Gtk/[ACIKLTil]*
+%{perl_vendorarch}/Gtk/Gdk.pm
+%dir %{perl_vendorarch}/Gtk/Gdk
+%dir %{perl_vendorarch}/auto/Gtk
+%{perl_vendorarch}/auto/Gtk/Gtk.bs
+%{perl_vendorarch}/auto/Gtk/autosplit.ix
+%attr(755,root,root) %{perl_vendorarch}/auto/Gtk/Gtk.so
+%dir %{perl_vendorarch}/auto/Gtk/Gdk
+%{perl_vendorarch}/auto/Gtk/Gdk/autosplit.ix
 %{_mandir}/man3/Gtk.3pm*
 %{_mandir}/man3/Gtk::[Ca-z]*.3pm*
 
 %if %{?_without_gdkimlib:0}%{!?_without_gdkimlib:1}
 %files Gdk-ImlibImage
 %defattr(644,root,root,755)
-%{perl_sitearch}/Gtk/Gdk/ImlibImage.pm
-%{perl_sitearch}/Gtk/Gdk/ImlibImage
-%dir %{perl_sitearch}/auto/Gtk/Gdk/ImlibImage
-%{perl_sitearch}/auto/Gtk/Gdk/ImlibImage/ImlibImage.bs
-%attr(755,root,root) %{perl_sitearch}/auto/Gtk/Gdk/ImlibImage/ImlibImage.so
+%{perl_vendorarch}/Gtk/Gdk/ImlibImage.pm
+%{perl_vendorarch}/Gtk/Gdk/ImlibImage
+%dir %{perl_vendorarch}/auto/Gtk/Gdk/ImlibImage
+%{perl_vendorarch}/auto/Gtk/Gdk/ImlibImage/ImlibImage.bs
+%attr(755,root,root) %{perl_vendorarch}/auto/Gtk/Gdk/ImlibImage/ImlibImage.so
 %{_mandir}/man3/Gtk::Gdk::ImlibImage*
 %endif
 
 %if %{?_without_gdkpixbuf:0}%{!?_without_gdkpixbuf:1}
 %files Gdk-Pixbuf
 %defattr(644,root,root,755)
-%{perl_sitearch}/Gtk/Gdk/Pixbuf.pm
-%{perl_sitearch}/Gtk/Gdk/Pixbuf
-%dir %{perl_sitearch}/auto/Gtk/Gdk/Pixbuf
-%{perl_sitearch}/auto/Gtk/Gdk/Pixbuf/Pixbuf.bs
-%attr(755,root,root) %{perl_sitearch}/auto/Gtk/Gdk/Pixbuf/Pixbuf.so
+%{perl_vendorarch}/Gtk/Gdk/Pixbuf.pm
+%{perl_vendorarch}/Gtk/Gdk/Pixbuf
+%dir %{perl_vendorarch}/auto/Gtk/Gdk/Pixbuf
+%{perl_vendorarch}/auto/Gtk/Gdk/Pixbuf/Pixbuf.bs
+%attr(755,root,root) %{perl_vendorarch}/auto/Gtk/Gdk/Pixbuf/Pixbuf.so
 %{_mandir}/man3/Gtk::Gdk::Pixbuf*
 %endif
 
 %if %{?_without_gtkglarea:0}%{!?_without_gtkglarea:1}
 %files GLArea
 %defattr(644,root,root,755)
-%{perl_sitearch}/Gtk/GLArea.pm
-%{perl_sitearch}/Gtk/GLArea
-%dir %{perl_sitearch}/auto/Gtk/GLArea
-%{perl_sitearch}/auto/Gtk/GLArea/GLArea.bs
-%attr(755,root,root) %{perl_sitearch}/auto/Gtk/GLArea/GLArea.so
-%dir %{perl_sitearch}/auto/Gtk/GLArea/Constants
-%{perl_sitearch}/auto/Gtk/GLArea/Constants/autosplit.ix
+%{perl_vendorarch}/Gtk/GLArea.pm
+%{perl_vendorarch}/Gtk/GLArea
+%dir %{perl_vendorarch}/auto/Gtk/GLArea
+%{perl_vendorarch}/auto/Gtk/GLArea/GLArea.bs
+%attr(755,root,root) %{perl_vendorarch}/auto/Gtk/GLArea/GLArea.so
+%dir %{perl_vendorarch}/auto/Gtk/GLArea/Constants
+%{perl_vendorarch}/auto/Gtk/GLArea/Constants/autosplit.ix
 %endif
 
 %if %{?_without_glade:0}%{!?_without_glade:1}
 %files GladeXML
 %defattr(644,root,root,755)
-%{perl_sitearch}/Gtk/GladeXML.pm
-%{perl_sitearch}/Gtk/GladeXML
-%dir %{perl_sitearch}/auto/Gtk/GladeXML
-%{perl_sitearch}/auto/Gtk/GladeXML/autosplit.ix
-%{perl_sitearch}/auto/Gtk/GladeXML/GladeXML.bs
-%attr(755,root,root) %{perl_sitearch}/auto/Gtk/GladeXML/GladeXML.so
+%{perl_vendorarch}/Gtk/GladeXML.pm
+%{perl_vendorarch}/Gtk/GladeXML
+%dir %{perl_vendorarch}/auto/Gtk/GladeXML
+%{perl_vendorarch}/auto/Gtk/GladeXML/autosplit.ix
+%{perl_vendorarch}/auto/Gtk/GladeXML/GladeXML.bs
+%attr(755,root,root) %{perl_vendorarch}/auto/Gtk/GladeXML/GladeXML.so
 %{_mandir}/man3/Gtk::GladeXML*
 %endif
 
 %if %{?_without_gtkxmhtml:0}%{!?_without_gtkxmhtml:1}
 %files XmHTML
 %defattr(644,root,root,755)
-%{perl_sitearch}/Gtk/XmHTML.pm
-%{perl_sitearch}/Gtk/XmHTML
-%dir %{perl_sitearch}/auto/Gtk/XmHTML
-%{perl_sitearch}/auto/Gtk/XmHTML/*.bs
-%attr(755,root,root) %{perl_sitearch}/auto/Gtk/XmHTML/*.so
+%{perl_vendorarch}/Gtk/XmHTML.pm
+%{perl_vendorarch}/Gtk/XmHTML
+%dir %{perl_vendorarch}/auto/Gtk/XmHTML
+%{perl_vendorarch}/auto/Gtk/XmHTML/*.bs
+%attr(755,root,root) %{perl_vendorarch}/auto/Gtk/XmHTML/*.so
 %endif
 
 %if %{?_with_gtkhtml:1}%{!?_with_gtkhtml:0}
 %files HTML
 %defattr(644,root,root,755)
-%{perl_sitearch}/Gtk/HTML.pm
-%{perl_sitearch}/Gtk/HTML
-%dir %{perl_sitearch}/auto/Gtk/HTML
-%{perl_sitearch}/auto/Gtk/HTML/*.bs
-%attr(755,root,root) %{perl_sitearch}/auto/Gtk/HTML/*.so
+%{perl_vendorarch}/Gtk/HTML.pm
+%{perl_vendorarch}/Gtk/HTML
+%dir %{perl_vendorarch}/auto/Gtk/HTML
+%{perl_vendorarch}/auto/Gtk/HTML/*.bs
+%attr(755,root,root) %{perl_vendorarch}/auto/Gtk/HTML/*.so
 %endif
 
 %if %{?_without_gnome:0}%{!?_without_gnome:1}
 %files -n perl-gnome
 %defattr(644,root,root,755)
-%{perl_sitearch}/Gnome.pm
-%dir %{perl_sitearch}/Gnome
-%{perl_sitearch}/Gnome/[IT]*
-%dir %{perl_sitearch}/auto/Gnome
-%{perl_sitearch}/auto/Gnome/Gnome.bs
-%attr(755,root,root) %{perl_sitearch}/auto/Gnome/Gnome.so
+%{perl_vendorarch}/Gnome.pm
+%dir %{perl_vendorarch}/Gnome
+%{perl_vendorarch}/Gnome/[IT]*
+%dir %{perl_vendorarch}/auto/Gnome
+%{perl_vendorarch}/auto/Gnome/Gnome.bs
+%attr(755,root,root) %{perl_vendorarch}/auto/Gnome/Gnome.so
 %{_mandir}/man3/Gnome.3pm*
 %{_mandir}/man3/Gnome::reference.3pm*
 %endif
@@ -413,21 +414,21 @@ rm -rf $RPM_BUILD_ROOT
 %if %{?_without_gnomeprint:0}%{!?_without_gnomeprint:1}
 %files -n perl-gnome-Print
 %defattr(644,root,root,755)
-%{perl_sitearch}/Gnome/Print.pm
-%{perl_sitearch}/Gnome/Print
-%dir %{perl_sitearch}/auto/Gnome/Print
-%{perl_sitearch}/auto/Gnome/Print/Print.bs
-%attr(755,root,root) %{perl_sitearch}/auto/Gnome/Print/Print.so
+%{perl_vendorarch}/Gnome/Print.pm
+%{perl_vendorarch}/Gnome/Print
+%dir %{perl_vendorarch}/auto/Gnome/Print
+%{perl_vendorarch}/auto/Gnome/Print/Print.bs
+%attr(755,root,root) %{perl_vendorarch}/auto/Gnome/Print/Print.so
 %{_mandir}/man3/Gnome::Print*
 %endif
 
 %if %{?_without_applets:0}%{!?_without_applets:1}
 %files -n perl-gnome-Applet
 %defattr(644,root,root,755)
-%{perl_sitearch}/Gnome/Applet.pm
-%{perl_sitearch}/Gnome/Applet
-%dir %{perl_sitearch}/auto/Gnome/Applet
-%{perl_sitearch}/auto/Gnome/Applet/*.bs
-%attr(755,root,root) %{perl_sitearch}/auto/Gnome/Applet/*.so
+%{perl_vendorarch}/Gnome/Applet.pm
+%{perl_vendorarch}/Gnome/Applet
+%dir %{perl_vendorarch}/auto/Gnome/Applet
+%{perl_vendorarch}/auto/Gnome/Applet/*.bs
+%attr(755,root,root) %{perl_vendorarch}/auto/Gnome/Applet/*.so
 %{_mandir}/man3/Gnome::Applet*
 %endif
