@@ -26,18 +26,6 @@ Version:	0.7008
 Release:	9
 License:	LGPL
 Group:		Development/Languages/Perl
-Group(cs):	Vıvojové prostøedky/Programovací jazyky/Perl
-Group(da):	Udvikling/Sprog/Perl
-Group(de):	Entwicklung/Sprachen/Perl
-Group(es):	Desarrollo/Lenguajes/Perl
-Group(fr):	Development/Langues/Perl
-Group(it):	Sviluppo/Linguaggi/Perl
-Group(ja):	³«È¯/¸À¸ì/Perl
-Group(no):	Utvikling/Programmeringsspråk/Perl
-Group(pl):	Programowanie/Jêzyki/Perl
-Group(pt):	Desenvolvimento/Linguagens/Perl
-Group(ru):	òÁÚÒÁÂÏÔËÁ/ñÚÙËÉ/Perl
-Group(sv):	Utveckling/Språk/Perl
 Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 Patch0:		%{name}-fix.patch
 URL:		http://www.gtkperl.org/
@@ -147,18 +135,6 @@ Summary(ru):	òÁÓÛÉÒÅÎÎÁÑ ×ÅÒÓÉÑ Perl ÄÌÑ Gnome
 Summary(sl):	Perlovske raz¹iritve za Gnome
 Summary(sv):	Perl-utvidgning för Gnome
 Group:		Development/Languages/Perl
-Group(cs):	Vıvojové prostøedky/Programovací jazyky/Perl
-Group(da):	Udvikling/Sprog/Perl
-Group(de):	Entwicklung/Sprachen/Perl
-Group(es):	Desarrollo/Lenguajes/Perl
-Group(fr):	Development/Langues/Perl
-Group(it):	Sviluppo/Linguaggi/Perl
-Group(ja):	³«È¯/¸À¸ì/Perl
-Group(no):	Utvikling/Programmeringsspråk/Perl
-Group(pl):	Programowanie/Jêzyki/Perl
-Group(pt):	Desenvolvimento/Linguagens/Perl
-Group(ru):	òÁÚÒÁÂÏÔËÁ/ñÚÙËÉ/Perl
-Group(sv):	Utveckling/Språk/Perl
 Requires:	%{name} = %{version}
 
 %description -n perl-gnome
