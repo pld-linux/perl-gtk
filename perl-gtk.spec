@@ -1,5 +1,5 @@
 #
-# TODO: add Applets, Bonobo and maybe Mozilla (but requires API update)
+# TODO: GtkHTML, Bonobo and Mozilla (don't build now - need fixes or API update)
 #
 # Conditional build:
 # _with_gtkhtml		- with Gtk::HTML module (gtkhtml library)
@@ -15,7 +15,7 @@
 %{?_without_gnome:%define	_without_applets	1}
 %{?_without_gnome:%define	_without_gnomeprint	1}
 # because libgtkxmhtml is not separated from gnome-libs...:
-# _without_gnome: ... _without_gtkxmhtml
+%{?_without_gnome:%define	_without_gtkxmhtml	1}
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	Gtk
 %define		pnam	Perl
@@ -36,21 +36,22 @@ Summary(sl):	Perlovske raz¹iritve za Gtk+ (Gimp ToolKit)
 Summary(sv):	Perl-utvidgning för Gtk+ (the Gimp ToolKit)
 Name:		perl-gtk
 Version:	0.7008
-Release:	11.1
+Release:	12
 License:	LGPL
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 Patch0:		%{name}-fix.patch
 Patch1:		%{name}-gtkgl.patch
 URL:		http://www.gtkperl.org/
-%{!?_without_gdkpixbuf:BuildRequires: gdk-pixbuf-devel}
-%{!?_without_gnome:BuildRequires: gnome-libs-devel}
-%{!?_without_gnomeprint:BuildRequires: gnome-print-devel}
+%{!?_without_gdkpixbuf:BuildRequires:	gdk-pixbuf-devel}
+%{!?_without_applets:BuildRequires:	gnome-core-devel}
+%{!?_without_gnome:BuildRequires:	gnome-libs-devel}
+%{!?_without_gnomeprint:BuildRequires:	gnome-print-devel}
 BuildRequires:	gtk+-devel
-%{!?_without_gtkglarea:BuildRequires: gtkglarea-devel}
-%{?_with_gtkhtml:BuildRequires: gtkhtml-devel}
-%{!?_without_gdkimlib:BuildRequires: imlib-devel}
-%{!?_without_glade:BuildRequires: libglade-devel}
+%{!?_without_gtkglarea:BuildRequires:	gtkglarea-devel}
+%{?_with_gtkhtml:BuildRequires:		gtkhtml-devel}
+%{!?_without_gdkimlib:BuildRequires:	imlib-devel}
+%{!?_without_glade:BuildRequires:	libglade-devel}
 BuildRequires:	perl-XML-Parser
 BuildRequires:	perl-XML-Writer
 BuildRequires:	perl-devel >= 5.005_03-10
@@ -296,8 +297,8 @@ perl Makefile.PL \
 %{?_without_gnomeprint:	--without-gnomeprint}	%{!?_without_gnomeprint:--with-gnomeprint-force} \
 %{?_without_gtkglarea:	--without-gtkglarea}	%{!?_without_gtkglarea:	--with-gtkglarea-force} \
 %{!?_with_gtkhtml:	--without-gtkhtml}	%{?_with_gtkhtml:	--with-gtkhtml-force} \
-%{?_without_gtkxmhtml:	--without-gtkxmhtml}	%{!?_without_gtkxmhtml:	--with-gtkxmhtml-force}
-#%{?_without_applets:	--without-applets}	%{!?_without_gnome:	--with-applets-force}
+%{?_without_gtkxmhtml:	--without-gtkxmhtml}	%{!?_without_gtkxmhtml:	--with-gtkxmhtml-force} \
+%{?_without_applets:	--without-applets}	%{!?_without_gnome:	--with-applets-force}
 
 %{__make} OPTIMIZE="%{rpmcflags}"
 
@@ -418,12 +419,13 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man3/Gnome::Print*
 %endif
 
-#%if %{?_without_applets:0}%{!?_without_applets:1}
-#%files -n perl-gnome-Applet
-#%defattr(644,root,root,755)
-#%{perl_sitearch}/Gnome/Applet.pm
-#%{perl_sitearch}/Gnome/Applet
-#%dir %{perl_sitearch}/auto/Gnome/Applet
-#%{perl_sitearch}/auto/Gnome/Applet/*.bs
-#%attr(755,root,root) %{perl_sitearch}/auto/Gnome/Applet/*.so
-#%endif
+%if %{?_without_applets:0}%{!?_without_applets:1}
+%files -n perl-gnome-Applet
+%defattr(644,root,root,755)
+%{perl_sitearch}/Gnome/Applet.pm
+%{perl_sitearch}/Gnome/Applet
+%dir %{perl_sitearch}/auto/Gnome/Applet
+%{perl_sitearch}/auto/Gnome/Applet/*.bs
+%attr(755,root,root) %{perl_sitearch}/auto/Gnome/Applet/*.so
+%{_mandir}/man3/Gnome::Applet*
+%endif
