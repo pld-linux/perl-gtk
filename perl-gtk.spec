@@ -24,7 +24,6 @@ Summary(sv):	Perl-utvidgning för Gtk+ (the Gimp ToolKit)
 Name:		perl-gtk
 Version:	0.7008
 Release:	9
-
 License:	LGPL
 Group:		Development/Languages/Perl
 Group(cs):	Vývojové prostøedky/Programovací jazyky/Perl
@@ -165,6 +164,9 @@ Requires:	%{name} = %{version}
 %description -n perl-gnome
 This package includes Perl extensions for Gnome.
 
+%description -n perl-gnome -l pl
+Ten pakiet zawiera rozszerzenia perla dla Gnome.
+
 %prep
 %setup -q -n Gtk-Perl-%{version}
 %patch0 -p1
@@ -182,14 +184,14 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{perl_archlib}
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT 
+	DESTDIR=$RPM_BUILD_ROOT
 
 gzip -9nf README
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files 
+%files
 %defattr(644,root,root,755)
 %doc *.gz
 %{perl_sitearch}/Gtk
