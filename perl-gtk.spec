@@ -22,21 +22,21 @@
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	Gtk
 %define	pnam	Perl
-Summary:	Perl extensions for Gtk+ (the Gimp ToolKit)
-Summary(cs):	Roz¹íøení Perlu pro Gtk+ (Gimp ToolKit)
-Summary(da):	Perl udvidelser for Gtk+
-Summary(de):	Perl-Erweiterungen für Gtk+ (das Gimp ToolKit)
-Summary(es):	Extensiones Perl para Gtk+
-Summary(fr):	Extensions Perl pour Gtk+ (l'ensemble d'outils GIMP)
-Summary(it):	Estensioni Perl per Gtk+ (Gimp Toolkit)
-Summary(ja):	Gtk+ (the Gimp ToolKit) ÍÑ¤Î Perl ³ÈÄ¥
-Summary(nb):	Perlmodul for Gtk+
-Summary(pl):	Rozszerzenie Perla dla Gtk+
-Summary(pt):	Uma extensão de Perl para o Gtk+ (Gimp Toolkit)
-Summary(pt_BR):	Extensões Perl para o Gtk+
-Summary(ru):	òÁÓÛÉÒÅÎÎÁÑ ×ÅÒÓÉÑ Perl ÄÌÑ Gtk+ (Gimp Toolkit)
-Summary(sl):	Perlovske raz¹iritve za Gtk+ (Gimp ToolKit)
-Summary(sv):	Perl-utvidgning för Gtk+ (the Gimp ToolKit)
+Summary:	Perl extensions for GTK+ (the Gimp ToolKit)
+Summary(cs):	Roz¹íøení Perlu pro GTK+ (Gimp ToolKit)
+Summary(da):	Perl udvidelser for GTK+
+Summary(de):	Perl-Erweiterungen für GTK+ (das Gimp ToolKit)
+Summary(es):	Extensiones Perl para GTK+
+Summary(fr):	Extensions Perl pour GTK+ (l'ensemble d'outils GIMP)
+Summary(it):	Estensioni Perl per GTK+ (Gimp Toolkit)
+Summary(ja):	GTK+ (the Gimp ToolKit) ÍÑ¤Î Perl ³ÈÄ¥
+Summary(nb):	Perlmodul for GTk+
+Summary(pl):	Rozszerzenie Perla dla GTK+
+Summary(pt):	Uma extensão de Perl para o GTK+ (Gimp Toolkit)
+Summary(pt_BR):	Extensões Perl para o GTK+
+Summary(ru):	òÁÓÛÉÒÅÎÎÁÑ ×ÅÒÓÉÑ Perl ÄÌÑ GTK+ (Gimp Toolkit)
+Summary(sl):	Perlovske raz¹iritve za GTK+ (Gimp ToolKit)
+Summary(sv):	Perl-utvidgning för GTK+ (the Gimp ToolKit)
 Name:		perl-gtk
 Version:	0.7009
 Release:	2
@@ -68,83 +68,83 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	Gtk-perl
 
 %description
-This package includes Perl extensions for Gtk+ (the Gimp ToolKit), a
+This package includes Perl extensions for GTK+ (the Gimp ToolKit), a
 library used for creating graphical user interfaces for the X Window
 System. The extensions provided in this package allow you to write
-graphical interfaces using Perl and Gtk+. If you install this package,
-you'll need to also have Perl and Gtk+ installed.
+graphical interfaces using Perl and GTK+. If you install this package,
+you'll need to also have Perl and GTK+ installed.
 
 %description -l cs
-Balíèek obsahuje roz¹íøení Perlu o Gtk+ (Gimp ToolKit), které umo¾òuje
+Balíèek obsahuje roz¹íøení Perlu o GTK+ (Gimp ToolKit), které umo¾òuje
 vytváøet grafická u¾ivatelská rozhraní pro prostøedí X Window System.
-Balíèek potøebuje pro svou funkci Perl a Gtk+.
+Balíèek potøebuje pro svou funkci Perl a GTK+.
 
 %description -l da
-Denne pakke indeholder Perl-moduler for Gtk+, et bibliotek som bruges
+Denne pakke indeholder Perl-moduler for GTK+, et bibliotek som bruges
 for at lave grafiske grænseflade for X. Modulerne i denne pakke gør
-det mulig at lave grafiske programmer ved hjælp af Perl og Gtk+. For
-at kunne installere denne pakke skal både Perl og Gtk+ være
+det mulig at lave grafiske programmer ved hjælp af Perl og GTK+. For
+at kunne installere denne pakke skal både Perl og GTK+ være
 installeret.
 
 %description -l de
-Dieses Paket enthält Perl-Erweiterungen für Gtk+ (das Gimp-ToolKit),
+Dieses Paket enthält Perl-Erweiterungen für GTK+ (das Gimp-ToolKit),
 eine Bibliothek, die für die Erzeugung von grafischen
 Benutzeroberflächen für das X Window-System verwendet wird. Die in
 diesem Paket enthaltenen Erweiterungen ermöglichen es Ihnen, grafische
-Schnittstellen mithilfe von Perl und Gtk+ zu schreiben. Wenn Sie
-dieses Paket installieren, müssen auch Perl und Gtk+ installiert sein.
+Schnittstellen mithilfe von Perl und GTK+ zu schreiben. Wenn Sie
+dieses Paket installieren, müssen auch Perl und GTK+ installiert sein.
 
 %description -l es
-Este paquete incluye las extensiones de Perl para Gtk+ (El Kit de
+Este paquete incluye las extensiones de Perl para GTK+ (El Kit de
 herramientas de Gimp), una biblioteca usada para crear interfaces
 gráficos de usuario para el Sistema X Window. Las extensiones
 proporcionadas en este paquete le permiten escribir interfaces
-gráficos usando Perl y Gtk+. Si instala este paquete, necesitará tener
-instalados también Perl y Gtk+.
+gráficos usando Perl y GTK+. Si instala este paquete, necesitará tener
+instalados también Perl y GTK+.
 
 %description -l fr
-Ce paquetage contient des extensions Perl pour Gtk+ (ensemble d'outils
+Ce paquetage contient des extensions Perl pour GTK+ (ensemble d'outils
 GIMP), une bibliothèque utilisée pour créer des interfaces utilisateur
 graphiques pour le système X Window. Les extensions fournies dans ce
 paquetage vous permettent de créer des interfaces graphiques à l'aide
-de Perl et Gtk+. Si vous installez ce paquetage, vous devrez aussi
-installer Perl et Gtk+.
+de Perl et GTK+. Si vous installez ce paquetage, vous devrez aussi
+installer Perl et GTK+.
 
 %description -l it
-Questo pacchetto include le estensioni Perl per Gtk+ (Gimp Toolkit);
+Questo pacchetto include le estensioni Perl per GTK+ (Gimp Toolkit);
 una libreria utilizzata per creare interfaccia utente grafiche per il
 Sistema X Window. L'estensione fornita in questo pacchetto vi consente
-di creare interfacce grafiche usando Perl e Gtk+. Con questo
-pacchetto; sara necessario installare anche Perl e Gtk+.
+di creare interfacce grafiche usando Perl e GTK+. Con questo
+pacchetto; sara necessario installare anche Perl e GTK+.
 
 %description -l ja
-¤³¤Î¥Ñ¥Ã¥±¡¼¥¸¤Ë¤Ï¡¢Gtk+ (Gimp ToolKit) ÍÑ¤Î Perl ¥¨¥¯¥¹¥Æ¥ó¥·¥ç¥ó¡¢ X
+¤³¤Î¥Ñ¥Ã¥±¡¼¥¸¤Ë¤Ï¡¢GTK+ (Gimp ToolKit) ÍÑ¤Î Perl ¥¨¥¯¥¹¥Æ¥ó¥·¥ç¥ó¡¢ X
 Window System ÍÑ¤Î¥°¥é¥Õ¥£¥«¥ë¥æ¡¼¥¶¡¼¥¤¥ó¥¿¡¼¥Õ¥§¥¤¥¹¤òºîÀ®¤¹¤ë¤¿¤á¤Ë
 »ÈÍÑ¤µ¤ì¤ë¥é¥¤¥Ö¥é¥ê¤¬´Þ¤Þ¤ì¤Æ¤¤¤Þ¤¹¡£¤³¤Î¥Ñ¥Ã¥±¡¼¥¸¤ËÆþ¤Ã¤Æ¤¤¤ë
-¥¨¥¯¥¹¥Æ¥ó¥·¥ç¥ó¤Ë¤è¤Ã¤Æ¡¢Perl ¤È Gtk+
+¥¨¥¯¥¹¥Æ¥ó¥·¥ç¥ó¤Ë¤è¤Ã¤Æ¡¢Perl ¤È GTK+
 ¤ò»È¤Ã¤Æ¥°¥é¥Õ¥£¥«¥ë¥¤¥ó¥¿¡¼¥Õ¥§¥¤¥¹
 ¤òºîÀ®¤¹¤ë¤³¤È¤¬¤Ç¤­¤Þ¤¹¡£¤³¤Î¥Ñ¥Ã¥±¡¼¥¸¤ò¥¤¥ó¥¹¥È¡¼¥ë¤¹¤ë¾ì¹ç¤Ï¡¢
-Perl ¤È Gtk+ ¤â¥¤¥ó¥¹¥È¡¼¥ë¤·¤Ê¤±¤ì¤Ð¤Ê¤ê¤Þ¤»¤ó¡£
+Perl ¤È GTK+ ¤â¥¤¥ó¥¹¥È¡¼¥ë¤·¤Ê¤±¤ì¤Ð¤Ê¤ê¤Þ¤»¤ó¡£
 
 %description -l nb
-Denne pakken inneholder Perl-moduler for Gtk+, et bibliotek som brukes
+Denne pakken inneholder Perl-moduler for GTK+, et bibliotek som brukes
 for å lage grafiske grensesnitt for X. Modulene i denne pakken gjør
-det mulig å lage grafiske programmer ved hjelp av Perl og Gtk+. For å
-kunne installere denne pakken må både Perl og Gtk+ være installert.
+det mulig å lage grafiske programmer ved hjelp av Perl og GTK+. For å
+kunne installere denne pakken må både Perl og GTK+ være installert.
 
 %description -l pl
-Gtk+-perl pozwala na pisanie interfejsu graficznego przy u¿yciu Perla
-i Gtk+.
+GTK+-perl pozwala na pisanie interfejsu graficznego przy u¿yciu Perla
+i GTK+.
 
 %description -l pt_BR
-Este pacote contém extensões Perl para o Gtk+.
+Este pacote contém extensões Perl para o GTK+.
 
 %description -l sv
-Detta paket innehåller Perlutvidgningar för Gtk+ (verktygslådan Gimp),
+Detta paket innehåller Perlutvidgningar för GTK+ (verktygslådan Gimp),
 ett bibliotek använt för att skapa grafiska användargränssnitt för X.
 Utvidgningen som tillhandahålls i detta paket låter dig skapa grafiska
-gränssnitt med Perl och Gtk+. Om du installerar detta paket behöver du
-även ha Perl och Gtk+ installerade.
+gränssnitt med Perl och GTK+. Om du installerar detta paket behöver du
+även ha Perl och GTK+ installerade.
 
 %package Gdk-ImlibImage
 Summary:	Imlib support for perl-gtk
