@@ -8,11 +8,11 @@ Group:		Development/Languages/Perl
 Group(pl):	Programowanie/Jêzyki/Perl
 Source:		ftp://www.gtk.org/pub/perl/Gtk-Perl-%{version}.tar.gz
 URL:		http://www.gtk.org/
-BuildPreReq:	perl >= 5.004
-BuildPreReq:	gtk+-devel
-BuildPreReq:	glib-devel
-BuildPreReq:	XFree86-devel
-BuildPrereq:	imlib-devel
+BuildRequires:	perl >= 5.004
+BuildRequires:	gtk+-devel
+BuildRequires:	glib-devel
+BuildRequires:	XFree86-devel
+BuildRequires:	imlib-devel
 %requires_eq	perl
 Requires:	%{perl_sitearch}
 Obsoletes:	Gtk-perl
