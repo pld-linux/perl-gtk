@@ -1,3 +1,4 @@
+%include	/usr/lib/rpm/macros.perl
 %define	pdir	Gtk
 %define	pnam	Perl
 #
@@ -5,7 +6,6 @@
 # _without_gnome
 #
 %define		_noautoreq "perl(Gtk::TypesLazy)" "perl(Gnome::TypesLazy)"
-%include	/usr/lib/rpm/macros.perl
 Summary:	Perl extensions for Gtk+ (the Gimp ToolKit)
 Summary(cs):	Roz¹íøení Perlu pro Gtk+ (Gimp ToolKit)
 Summary(da):	Perl udvidelser for Gtk+
@@ -23,7 +23,7 @@ Summary(sl):	Perlovske raz¹iritve za Gtk+ (Gimp ToolKit)
 Summary(sv):	Perl-utvidgning för Gtk+ (the Gimp ToolKit)
 Name:		perl-gtk
 Version:	0.7008
-Release:	9
+Release:	10
 License:	LGPL
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
@@ -144,7 +144,7 @@ This package includes Perl extensions for Gnome.
 Ten pakiet zawiera rozszerzenia perla dla Gnome.
 
 %prep
-%setup -q -n Gtk-Perl-%{version}
+%setup -q -n %{pdir}-%{pnam}-%{version}
 %patch0 -p1
 
 %build
