@@ -6,6 +6,7 @@ Version:	0.7000
 Release:	2
 License:	LGPL
 Group:		Development/Languages/Perl
+Group(de):	Entwicklung/Sprachen/Perl
 Group(pl):	Programowanie/Jêzyki/Perl
 Source0:	ftp://www.gtk.org/pub/perl/Gtk-Perl-%{version}.tar.gz
 URL:		http://www.gtk.org/
@@ -38,7 +39,7 @@ perl Makefile.PL \
 	--without-gnome-panel \
 	--without-gnome-zvt
 
-%{__make} OPTIMIZE="$RPM_OPT_FLAGS"
+%{__make} OPTIMIZE="%{?debug:-O0 -g}%{!?debug:$RPM_OPT_FLAGS}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -47,12 +48,6 @@ install -d $RPM_BUILD_ROOT%{perl_archlib}
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT 
 
-sed -e "s#$RPM_BUILD_ROOT##g" \
-	$RPM_BUILD_ROOT%{perl_sitearch}/auto/Gtk/.packlist \
-        > $RPM_BUILD_ROOT%{perl_sitearch}/auto/Gtk/.packlist.wrk
-mv $RPM_BUILD_ROOT%{perl_sitearch}/auto/Gtk/.packlist.wrk \
-	        $RPM_BUILD_ROOT%{perl_sitearch}/auto/Gtk/.packlist
-
 gzip -9nf README
 
 %clean
@@ -60,13 +55,10 @@ rm -rf $RPM_BUILD_ROOT
 
 %files 
 %defattr(644,root,root,755)
-%doc README.gz
-
+%doc *.gz
 %attr(755,root,root) %{perl_sitearch}/auto/Gtk/Gtk.so
 %{perl_sitearch}/*.pm
 %{perl_sitearch}/Gtk
 %{perl_sitearch}/auto/Gtk/Gtk.bs
-%{perl_sitearch}/auto/Gtk/.packlist
-%dir %{perl_sitearch}/auto/Gtk
-%dir %{perl_sitearch}/auto/Gtk/Gdk
+%{perl_sitearch}/auto/Gtk/Gdk
 %{_mandir}/man3/*
