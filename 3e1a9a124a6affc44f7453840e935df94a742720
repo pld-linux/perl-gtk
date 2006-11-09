@@ -1,0 +1,2 @@
+- added Gtk::Gdk::Pixbug, Gtk::GLArea, Gtk::GladeXML, Gnome::Print to %files (now bins-edit-gui work)
+- release 10.2 (for test and maybe split to more subpackages)
