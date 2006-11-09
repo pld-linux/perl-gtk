@@ -1,0 +1,6 @@
+- fixed _without_gnome / _without_gnomeprint build
+- added unrecognized Provides: perl(Gnome::Print::Types),
+  perl(Gnome::Print::TypesLazy)
+- new %doc
+- cleaning
+- release 10.3
