@@ -49,9 +49,9 @@ Patch0:		%{name}-fix.patch
 Patch1:		%{name}-gtkgl.patch
 Patch2:		%{name}-inc.patch
 URL:		http://www.gtkperl.org/
+%{?with_applets:BuildRequires:	control-center-devel < 1.99}
 %{?with_gdk_pixbuf:BuildRequires:	gdk-pixbuf-devel}
 %{?with_applets:BuildRequires:	gnome-core-devel}
-%{?with_applets:BuildRequires:	control-center-devel < 1.99}
 %{?with_gnome:BuildRequires:	gnome-libs-devel}
 %{?with_gnomeprint:BuildRequires:	gnome-print-devel}
 BuildRequires:	gtk+-devel >= 1.2.0
@@ -64,8 +64,8 @@ BuildRequires:	perl-XML-Parser
 BuildRequires:	perl-XML-Writer
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	Gtk-perl
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 This package includes Perl extensions for GTK+ (the Gimp ToolKit), a
@@ -150,7 +150,7 @@ gr‰nssnitt med Perl och GTK+. Om du installerar detta paket behˆver du
 Summary:	Imlib support for perl-gtk
 Summary(pl):	Obs≥uga Imlib dla perl-gtk
 Group:		Development/Languages/Perl
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description Gdk-ImlibImage
 Gtk::Gdk::ImlibImage module - Imlib library support for perl-gtk.
@@ -162,7 +162,7 @@ Modu≥ Gtk::Gdk::ImlibImage - obs≥uga biblioteki Imlib dla perl-gtk.
 Summary:	Gdk-Pixbuf support for perl-gtk
 Summary(pl):	Obs≥uga Gdk-Pixbuf dla perl-gtk
 Group:		Development/Languages/Perl
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description Gdk-Pixbuf
 Gtk::Gdk::Pixbuf module - Gdk-Pixbuf library support for perl-gtk.
@@ -174,7 +174,7 @@ Modu≥ Gtk::Gdk::Pixbuf - obs≥uga biblioteki Gdk-Pixbuf dla perl-gtk.
 Summary:	Gtk-GLArea support for perl-gtk
 Summary(pl):	Obs≥uga Gtk-GLArea dla perl-gtk
 Group:		Development/Languages/Perl
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description GLArea
 Gtk::GLArea module - Gtk-GLArea library support for perl-gtk.
@@ -186,7 +186,7 @@ Modu≥ Gtk::GLArea - obs≥uga biblioteki Gtk-GLArea dla perl-gtk.
 Summary:	libglade support for perl-gtk
 Summary(pl):	Obs≥uga libglade dla perl-gtk
 Group:		Development/Languages/Perl
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description GladeXML
 Gtk::GladeXML module - libglade library support for perl-gtk.
@@ -198,7 +198,7 @@ Modu≥ Gtk::GladeXML - obs≥uga biblioteki libglade dla perl-gtk.
 Summary:	XmHTML support for perl-gtk
 Summary(pl):	Obs≥uga XmHTML dla perl-gtk
 Group:		Development/Languages/Perl
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description XmHTML
 Gtk::XmHTML module - gtkxmhtml library support for perl-gtk.
@@ -210,7 +210,7 @@ Modu≥ Gtk::XmHTML - obs≥uga biblioteki gtkxmhtml dla perl-gtk.
 Summary:	gtkhtml support for perl-gtk
 Summary(pl):	Obs≥uga gtkhtml dla perl-gtk
 Group:		Development/Languages/Perl
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description HTML
 Gtk::HTML module - gtkhtml library support for perl-gtk.
@@ -235,8 +235,8 @@ Summary(ru):	Ú¡”€…“≈ŒŒ¡— ◊≈“”…— Perl ƒÃ— GNOME
 Summary(sl):	Perlovske razπiritve za GNOME
 Summary(sv):	Perl-utvidgning fˆr GNOME
 Group:		Development/Languages/Perl
-Requires:	%{name} = %{version}
-Requires:	%{name}-Gdk-ImlibImage = %{version}
+Requires:	%{name} = %{version}-%{release}
+Requires:	%{name}-Gdk-ImlibImage = %{version}-%{release}
 
 %description -n perl-gnome
 This package includes Perl extensions for GNOME.
@@ -261,8 +261,8 @@ Summary(ru):	Ú¡”€…“≈ŒŒ¡— ◊≈“”…— Perl ƒÃ— GnomePrint
 Summary(sl):	Perlovske razπiritve za GnomePrint
 Summary(sv):	Perl-utvidgning fˆr GnomePrint
 Group:		Development/Languages/Perl
+Requires:	%{name}-Gdk-Pixbuf = %{version}-%{release}
 Requires:	perl-gnome = %{version}
-Requires:	%{name}-Gdk-Pixbuf = %{version}
 
 %description -n perl-gnome-Print
 This package includes Perl extensions for GnomePrint.
