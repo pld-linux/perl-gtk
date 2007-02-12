@@ -23,20 +23,20 @@
 %define		pdir	Gtk
 %define		pnam	Perl
 Summary:	Perl extensions for GTK+ (the Gimp ToolKit)
-Summary(cs):	Roz¹íøení Perlu pro GTK+ (Gimp ToolKit)
-Summary(da):	Perl udvidelser for GTK+
-Summary(de):	Perl-Erweiterungen für GTK+ (das Gimp ToolKit)
-Summary(es):	Extensiones Perl para GTK+
-Summary(fr):	Extensions Perl pour GTK+ (l'ensemble d'outils GIMP)
-Summary(it):	Estensioni Perl per GTK+ (Gimp Toolkit)
-Summary(ja):	GTK+ (the Gimp ToolKit) ÍÑ¤Î Perl ³ÈÄ¥
-Summary(nb):	Perlmodul for GTk+
-Summary(pl):	Rozszerzenie Perla dla GTK+
-Summary(pt):	Uma extensão de Perl para o GTK+ (Gimp Toolkit)
-Summary(pt_BR):	Extensões Perl para o GTK+
-Summary(ru):	òÁÓÛÉÒÅÎÎÁÑ ×ÅÒÓÉÑ Perl ÄÌÑ GTK+ (Gimp Toolkit)
-Summary(sl):	Perlovske raz¹iritve za GTK+ (Gimp ToolKit)
-Summary(sv):	Perl-utvidgning för GTK+ (the Gimp ToolKit)
+Summary(cs.UTF-8):   RozÅ¡Ã­Å™enÃ­ Perlu pro GTK+ (Gimp ToolKit)
+Summary(da.UTF-8):   Perl udvidelser for GTK+
+Summary(de.UTF-8):   Perl-Erweiterungen fÃ¼r GTK+ (das Gimp ToolKit)
+Summary(es.UTF-8):   Extensiones Perl para GTK+
+Summary(fr.UTF-8):   Extensions Perl pour GTK+ (l'ensemble d'outils GIMP)
+Summary(it.UTF-8):   Estensioni Perl per GTK+ (Gimp Toolkit)
+Summary(ja.UTF-8):   GTK+ (the Gimp ToolKit) ç”¨ã® Perl æ‹¡å¼µ
+Summary(nb.UTF-8):   Perlmodul for GTk+
+Summary(pl.UTF-8):   Rozszerzenie Perla dla GTK+
+Summary(pt.UTF-8):   Uma extensÃ£o de Perl para o GTK+ (Gimp Toolkit)
+Summary(pt_BR.UTF-8):   ExtensÃµes Perl para o GTK+
+Summary(ru.UTF-8):   Ğ Ğ°ÑÑˆĞ¸Ñ€ĞµĞ½Ğ½Ğ°Ñ Ğ²ĞµÑ€ÑĞ¸Ñ Perl Ğ´Ğ»Ñ GTK+ (Gimp Toolkit)
+Summary(sl.UTF-8):   Perlovske razÅ¡iritve za GTK+ (Gimp ToolKit)
+Summary(sv.UTF-8):   Perl-utvidgning fÃ¶r GTK+ (the Gimp ToolKit)
 Name:		perl-gtk
 Version:	0.7009
 Release:	2
@@ -74,166 +74,166 @@ System. The extensions provided in this package allow you to write
 graphical interfaces using Perl and GTK+. If you install this package,
 you'll need to also have Perl and GTK+ installed.
 
-%description -l cs
-Balíèek obsahuje roz¹íøení Perlu o GTK+ (Gimp ToolKit), které umo¾òuje
-vytváøet grafická u¾ivatelská rozhraní pro prostøedí X Window System.
-Balíèek potøebuje pro svou funkci Perl a GTK+.
+%description -l cs.UTF-8
+BalÃ­Äek obsahuje rozÅ¡Ã­Å™enÃ­ Perlu o GTK+ (Gimp ToolKit), kterÃ© umoÅ¾Åˆuje
+vytvÃ¡Å™et grafickÃ¡ uÅ¾ivatelskÃ¡ rozhranÃ­ pro prostÅ™edÃ­ X Window System.
+BalÃ­Äek potÅ™ebuje pro svou funkci Perl a GTK+.
 
-%description -l da
+%description -l da.UTF-8
 Denne pakke indeholder Perl-moduler for GTK+, et bibliotek som bruges
-for at lave grafiske grænseflade for X. Modulerne i denne pakke gør
-det mulig at lave grafiske programmer ved hjælp af Perl og GTK+. For
-at kunne installere denne pakke skal både Perl og GTK+ være
+for at lave grafiske grÃ¦nseflade for X. Modulerne i denne pakke gÃ¸r
+det mulig at lave grafiske programmer ved hjÃ¦lp af Perl og GTK+. For
+at kunne installere denne pakke skal bÃ¥de Perl og GTK+ vÃ¦re
 installeret.
 
-%description -l de
-Dieses Paket enthält Perl-Erweiterungen für GTK+ (das Gimp-ToolKit),
-eine Bibliothek, die für die Erzeugung von grafischen
-Benutzeroberflächen für das X Window-System verwendet wird. Die in
-diesem Paket enthaltenen Erweiterungen ermöglichen es Ihnen, grafische
+%description -l de.UTF-8
+Dieses Paket enthÃ¤lt Perl-Erweiterungen fÃ¼r GTK+ (das Gimp-ToolKit),
+eine Bibliothek, die fÃ¼r die Erzeugung von grafischen
+BenutzeroberflÃ¤chen fÃ¼r das X Window-System verwendet wird. Die in
+diesem Paket enthaltenen Erweiterungen ermÃ¶glichen es Ihnen, grafische
 Schnittstellen mithilfe von Perl und GTK+ zu schreiben. Wenn Sie
-dieses Paket installieren, müssen auch Perl und GTK+ installiert sein.
+dieses Paket installieren, mÃ¼ssen auch Perl und GTK+ installiert sein.
 
-%description -l es
+%description -l es.UTF-8
 Este paquete incluye las extensiones de Perl para GTK+ (El Kit de
 herramientas de Gimp), una biblioteca usada para crear interfaces
-gráficos de usuario para el Sistema X Window. Las extensiones
+grÃ¡ficos de usuario para el Sistema X Window. Las extensiones
 proporcionadas en este paquete le permiten escribir interfaces
-gráficos usando Perl y GTK+. Si instala este paquete, necesitará tener
-instalados también Perl y GTK+.
+grÃ¡ficos usando Perl y GTK+. Si instala este paquete, necesitarÃ¡ tener
+instalados tambiÃ©n Perl y GTK+.
 
-%description -l fr
+%description -l fr.UTF-8
 Ce paquetage contient des extensions Perl pour GTK+ (ensemble d'outils
-GIMP), une bibliothèque utilisée pour créer des interfaces utilisateur
-graphiques pour le système X Window. Les extensions fournies dans ce
-paquetage vous permettent de créer des interfaces graphiques à l'aide
+GIMP), une bibliothÃ¨que utilisÃ©e pour crÃ©er des interfaces utilisateur
+graphiques pour le systÃ¨me X Window. Les extensions fournies dans ce
+paquetage vous permettent de crÃ©er des interfaces graphiques Ã  l'aide
 de Perl et GTK+. Si vous installez ce paquetage, vous devrez aussi
 installer Perl et GTK+.
 
-%description -l it
+%description -l it.UTF-8
 Questo pacchetto include le estensioni Perl per GTK+ (Gimp Toolkit);
 una libreria utilizzata per creare interfaccia utente grafiche per il
 Sistema X Window. L'estensione fornita in questo pacchetto vi consente
 di creare interfacce grafiche usando Perl e GTK+. Con questo
 pacchetto; sara necessario installare anche Perl e GTK+.
 
-%description -l ja
-¤³¤Î¥Ñ¥Ã¥±¡¼¥¸¤Ë¤Ï¡¢GTK+ (Gimp ToolKit) ÍÑ¤Î Perl ¥¨¥¯¥¹¥Æ¥ó¥·¥ç¥ó¡¢ X
-Window System ÍÑ¤Î¥°¥é¥Õ¥£¥«¥ë¥æ¡¼¥¶¡¼¥¤¥ó¥¿¡¼¥Õ¥§¥¤¥¹¤òºîÀ®¤¹¤ë¤¿¤á¤Ë
-»ÈÍÑ¤µ¤ì¤ë¥é¥¤¥Ö¥é¥ê¤¬´Ş¤Ş¤ì¤Æ¤¤¤Ş¤¹¡£¤³¤Î¥Ñ¥Ã¥±¡¼¥¸¤ËÆş¤Ã¤Æ¤¤¤ë
-¥¨¥¯¥¹¥Æ¥ó¥·¥ç¥ó¤Ë¤è¤Ã¤Æ¡¢Perl ¤È GTK+
-¤ò»È¤Ã¤Æ¥°¥é¥Õ¥£¥«¥ë¥¤¥ó¥¿¡¼¥Õ¥§¥¤¥¹
-¤òºîÀ®¤¹¤ë¤³¤È¤¬¤Ç¤­¤Ş¤¹¡£¤³¤Î¥Ñ¥Ã¥±¡¼¥¸¤ò¥¤¥ó¥¹¥È¡¼¥ë¤¹¤ë¾ì¹ç¤Ï¡¢
-Perl ¤È GTK+ ¤â¥¤¥ó¥¹¥È¡¼¥ë¤·¤Ê¤±¤ì¤Ğ¤Ê¤ê¤Ş¤»¤ó¡£
+%description -l ja.UTF-8
+ã“ã®ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ã«ã¯ã€GTK+ (Gimp ToolKit) ç”¨ã® Perl ã‚¨ã‚¯ã‚¹ãƒ†ãƒ³ã‚·ãƒ§ãƒ³ã€ X
+Window System ç”¨ã®ã‚°ãƒ©ãƒ•ã‚£ã‚«ãƒ«ãƒ¦ãƒ¼ã‚¶ãƒ¼ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ã‚¤ã‚¹ã‚’ä½œæˆã™ã‚‹ãŸã‚ã«
+ä½¿ç”¨ã•ã‚Œã‚‹ãƒ©ã‚¤ãƒ–ãƒ©ãƒªãŒå«ã¾ã‚Œã¦ã„ã¾ã™ã€‚ã“ã®ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ã«å…¥ã£ã¦ã„ã‚‹
+ã‚¨ã‚¯ã‚¹ãƒ†ãƒ³ã‚·ãƒ§ãƒ³ã«ã‚ˆã£ã¦ã€Perl ã¨ GTK+
+ã‚’ä½¿ã£ã¦ã‚°ãƒ©ãƒ•ã‚£ã‚«ãƒ«ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ã‚¤ã‚¹
+ã‚’ä½œæˆã™ã‚‹ã“ã¨ãŒã§ãã¾ã™ã€‚ã“ã®ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ã‚’ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã™ã‚‹å ´åˆã¯ã€
+Perl ã¨ GTK+ ã‚‚ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã—ãªã‘ã‚Œã°ãªã‚Šã¾ã›ã‚“ã€‚
 
-%description -l nb
+%description -l nb.UTF-8
 Denne pakken inneholder Perl-moduler for GTK+, et bibliotek som brukes
-for å lage grafiske grensesnitt for X. Modulene i denne pakken gjør
-det mulig å lage grafiske programmer ved hjelp av Perl og GTK+. For å
-kunne installere denne pakken må både Perl og GTK+ være installert.
+for Ã¥ lage grafiske grensesnitt for X. Modulene i denne pakken gjÃ¸r
+det mulig Ã¥ lage grafiske programmer ved hjelp av Perl og GTK+. For Ã¥
+kunne installere denne pakken mÃ¥ bÃ¥de Perl og GTK+ vÃ¦re installert.
 
-%description -l pl
-GTK+-perl pozwala na pisanie interfejsu graficznego przy u¿yciu Perla
+%description -l pl.UTF-8
+GTK+-perl pozwala na pisanie interfejsu graficznego przy uÅ¼yciu Perla
 i GTK+.
 
-%description -l pt_BR
-Este pacote contém extensões Perl para o GTK+.
+%description -l pt_BR.UTF-8
+Este pacote contÃ©m extensÃµes Perl para o GTK+.
 
-%description -l sv
-Detta paket innehåller Perlutvidgningar för GTK+ (verktygslådan Gimp),
-ett bibliotek använt för att skapa grafiska användargränssnitt för X.
-Utvidgningen som tillhandahålls i detta paket låter dig skapa grafiska
-gränssnitt med Perl och GTK+. Om du installerar detta paket behöver du
-även ha Perl och GTK+ installerade.
+%description -l sv.UTF-8
+Detta paket innehÃ¥ller Perlutvidgningar fÃ¶r GTK+ (verktygslÃ¥dan Gimp),
+ett bibliotek anvÃ¤nt fÃ¶r att skapa grafiska anvÃ¤ndargrÃ¤nssnitt fÃ¶r X.
+Utvidgningen som tillhandahÃ¥lls i detta paket lÃ¥ter dig skapa grafiska
+grÃ¤nssnitt med Perl och GTK+. Om du installerar detta paket behÃ¶ver du
+Ã¤ven ha Perl och GTK+ installerade.
 
 %package Gdk-ImlibImage
 Summary:	Imlib support for perl-gtk
-Summary(pl):	Obs³uga Imlib dla perl-gtk
+Summary(pl.UTF-8):   ObsÅ‚uga Imlib dla perl-gtk
 Group:		Development/Languages/Perl
 Requires:	%{name} = %{version}-%{release}
 
 %description Gdk-ImlibImage
 Gtk::Gdk::ImlibImage module - Imlib library support for perl-gtk.
 
-%description Gdk-ImlibImage -l pl
-Modu³ Gtk::Gdk::ImlibImage - obs³uga biblioteki Imlib dla perl-gtk.
+%description Gdk-ImlibImage -l pl.UTF-8
+ModuÅ‚ Gtk::Gdk::ImlibImage - obsÅ‚uga biblioteki Imlib dla perl-gtk.
 
 %package Gdk-Pixbuf
 Summary:	Gdk-Pixbuf support for perl-gtk
-Summary(pl):	Obs³uga Gdk-Pixbuf dla perl-gtk
+Summary(pl.UTF-8):   ObsÅ‚uga Gdk-Pixbuf dla perl-gtk
 Group:		Development/Languages/Perl
 Requires:	%{name} = %{version}-%{release}
 
 %description Gdk-Pixbuf
 Gtk::Gdk::Pixbuf module - Gdk-Pixbuf library support for perl-gtk.
 
-%description Gdk-Pixbuf -l pl
-Modu³ Gtk::Gdk::Pixbuf - obs³uga biblioteki Gdk-Pixbuf dla perl-gtk.
+%description Gdk-Pixbuf -l pl.UTF-8
+ModuÅ‚ Gtk::Gdk::Pixbuf - obsÅ‚uga biblioteki Gdk-Pixbuf dla perl-gtk.
 
 %package GLArea
 Summary:	Gtk-GLArea support for perl-gtk
-Summary(pl):	Obs³uga Gtk-GLArea dla perl-gtk
+Summary(pl.UTF-8):   ObsÅ‚uga Gtk-GLArea dla perl-gtk
 Group:		Development/Languages/Perl
 Requires:	%{name} = %{version}-%{release}
 
 %description GLArea
 Gtk::GLArea module - Gtk-GLArea library support for perl-gtk.
 
-%description GLArea -l pl
-Modu³ Gtk::GLArea - obs³uga biblioteki Gtk-GLArea dla perl-gtk.
+%description GLArea -l pl.UTF-8
+ModuÅ‚ Gtk::GLArea - obsÅ‚uga biblioteki Gtk-GLArea dla perl-gtk.
 
 %package GladeXML
 Summary:	libglade support for perl-gtk
-Summary(pl):	Obs³uga libglade dla perl-gtk
+Summary(pl.UTF-8):   ObsÅ‚uga libglade dla perl-gtk
 Group:		Development/Languages/Perl
 Requires:	%{name} = %{version}-%{release}
 
 %description GladeXML
 Gtk::GladeXML module - libglade library support for perl-gtk.
 
-%description GladeXML -l pl
-Modu³ Gtk::GladeXML - obs³uga biblioteki libglade dla perl-gtk.
+%description GladeXML -l pl.UTF-8
+ModuÅ‚ Gtk::GladeXML - obsÅ‚uga biblioteki libglade dla perl-gtk.
 
 %package XmHTML
 Summary:	XmHTML support for perl-gtk
-Summary(pl):	Obs³uga XmHTML dla perl-gtk
+Summary(pl.UTF-8):   ObsÅ‚uga XmHTML dla perl-gtk
 Group:		Development/Languages/Perl
 Requires:	%{name} = %{version}-%{release}
 
 %description XmHTML
 Gtk::XmHTML module - gtkxmhtml library support for perl-gtk.
 
-%description XmHTML -l pl
-Modu³ Gtk::XmHTML - obs³uga biblioteki gtkxmhtml dla perl-gtk.
+%description XmHTML -l pl.UTF-8
+ModuÅ‚ Gtk::XmHTML - obsÅ‚uga biblioteki gtkxmhtml dla perl-gtk.
 
 %package HTML
 Summary:	gtkhtml support for perl-gtk
-Summary(pl):	Obs³uga gtkhtml dla perl-gtk
+Summary(pl.UTF-8):   ObsÅ‚uga gtkhtml dla perl-gtk
 Group:		Development/Languages/Perl
 Requires:	%{name} = %{version}-%{release}
 
 %description HTML
 Gtk::HTML module - gtkhtml library support for perl-gtk.
 
-%description HTML -l pl
-Modu³ Gtk::HTML - obs³uga biblioteki gtkhtml dla perl-gtk.
+%description HTML -l pl.UTF-8
+ModuÅ‚ Gtk::HTML - obsÅ‚uga biblioteki gtkhtml dla perl-gtk.
 
 %package -n perl-gnome
 Summary:	Perl extensions for GNOME
-Summary(cs):	Roz¹íøení Perlu pro GNOME
-Summary(da):	Perl udvidelser for GNOME
-Summary(de):	Perl-Erweiterungen für GNOME
-Summary(es):	Extensiones Perl para GNOME
-Summary(fr):	Extensions Perl pour GNOME
-Summary(it):	Estensioni Perl per GNOME
-Summary(ja):	GNOME ÍÑ¤Î Perl ³ÈÄ¥
-Summary(nb):	Perlmodul for GNOME
-Summary(pl):	Rozszerzenie Perla dla GNOME
-Summary(pt):	Uma extensão de Perl para o GNOME
-Summary(pt_BR):	Extensões Perl para o GNOME
-Summary(ru):	òÁÓÛÉÒÅÎÎÁÑ ×ÅÒÓÉÑ Perl ÄÌÑ GNOME
-Summary(sl):	Perlovske raz¹iritve za GNOME
-Summary(sv):	Perl-utvidgning för GNOME
+Summary(cs.UTF-8):   RozÅ¡Ã­Å™enÃ­ Perlu pro GNOME
+Summary(da.UTF-8):   Perl udvidelser for GNOME
+Summary(de.UTF-8):   Perl-Erweiterungen fÃ¼r GNOME
+Summary(es.UTF-8):   Extensiones Perl para GNOME
+Summary(fr.UTF-8):   Extensions Perl pour GNOME
+Summary(it.UTF-8):   Estensioni Perl per GNOME
+Summary(ja.UTF-8):   GNOME ç”¨ã® Perl æ‹¡å¼µ
+Summary(nb.UTF-8):   Perlmodul for GNOME
+Summary(pl.UTF-8):   Rozszerzenie Perla dla GNOME
+Summary(pt.UTF-8):   Uma extensÃ£o de Perl para o GNOME
+Summary(pt_BR.UTF-8):   ExtensÃµes Perl para o GNOME
+Summary(ru.UTF-8):   Ğ Ğ°ÑÑˆĞ¸Ñ€ĞµĞ½Ğ½Ğ°Ñ Ğ²ĞµÑ€ÑĞ¸Ñ Perl Ğ´Ğ»Ñ GNOME
+Summary(sl.UTF-8):   Perlovske razÅ¡iritve za GNOME
+Summary(sv.UTF-8):   Perl-utvidgning fÃ¶r GNOME
 Group:		Development/Languages/Perl
 Requires:	%{name} = %{version}-%{release}
 Requires:	%{name}-Gdk-ImlibImage = %{version}-%{release}
@@ -241,25 +241,25 @@ Requires:	%{name}-Gdk-ImlibImage = %{version}-%{release}
 %description -n perl-gnome
 This package includes Perl extensions for GNOME.
 
-%description -n perl-gnome -l pl
+%description -n perl-gnome -l pl.UTF-8
 Ten pakiet zawiera rozszerzenia Perla dla GNOME.
 
 %package -n perl-gnome-Print
 Summary:	Perl extensions for GnomePrint
-Summary(cs):	Roz¹íøení Perlu pro GnomePrint
-Summary(da):	Perl udvidelser for GnomePrint
-Summary(de):	Perl-Erweiterungen für GnomePrint
-Summary(es):	Extensiones Perl para GnomePrint
-Summary(fr):	Extensions Perl pour GnomePrint
-Summary(it):	Estensioni Perl per GnomePrint
-Summary(ja):	GnomePrint ÍÑ¤Î Perl ³ÈÄ¥
-Summary(nb):	Perlmodul for GnomePrint
-Summary(pl):	Rozszerzenie Perl dla GnomePrint
-Summary(pt):	Uma extensão de Perl para o GnomePrint
-Summary(pt_BR):	Extensões Perl para o GnomePrint
-Summary(ru):	òÁÓÛÉÒÅÎÎÁÑ ×ÅÒÓÉÑ Perl ÄÌÑ GnomePrint
-Summary(sl):	Perlovske raz¹iritve za GnomePrint
-Summary(sv):	Perl-utvidgning för GnomePrint
+Summary(cs.UTF-8):   RozÅ¡Ã­Å™enÃ­ Perlu pro GnomePrint
+Summary(da.UTF-8):   Perl udvidelser for GnomePrint
+Summary(de.UTF-8):   Perl-Erweiterungen fÃ¼r GnomePrint
+Summary(es.UTF-8):   Extensiones Perl para GnomePrint
+Summary(fr.UTF-8):   Extensions Perl pour GnomePrint
+Summary(it.UTF-8):   Estensioni Perl per GnomePrint
+Summary(ja.UTF-8):   GnomePrint ç”¨ã® Perl æ‹¡å¼µ
+Summary(nb.UTF-8):   Perlmodul for GnomePrint
+Summary(pl.UTF-8):   Rozszerzenie Perl dla GnomePrint
+Summary(pt.UTF-8):   Uma extensÃ£o de Perl para o GnomePrint
+Summary(pt_BR.UTF-8):   ExtensÃµes Perl para o GnomePrint
+Summary(ru.UTF-8):   Ğ Ğ°ÑÑˆĞ¸Ñ€ĞµĞ½Ğ½Ğ°Ñ Ğ²ĞµÑ€ÑĞ¸Ñ Perl Ğ´Ğ»Ñ GnomePrint
+Summary(sl.UTF-8):   Perlovske razÅ¡iritve za GnomePrint
+Summary(sv.UTF-8):   Perl-utvidgning fÃ¶r GnomePrint
 Group:		Development/Languages/Perl
 Requires:	%{name}-Gdk-Pixbuf = %{version}-%{release}
 Requires:	perl-gnome = %{version}
@@ -267,20 +267,20 @@ Requires:	perl-gnome = %{version}
 %description -n perl-gnome-Print
 This package includes Perl extensions for GnomePrint.
 
-%description -n perl-gnome-Print -l pl
+%description -n perl-gnome-Print -l pl.UTF-8
 Ten pakiet zawiera rozszerzenia Perla dla GnomePrint.
 
 %package -n perl-gnome-Applet
 Summary:	Applets support for perl-gnome
-Summary(pl):	Obs³uga apletów dla perl-gnome
+Summary(pl.UTF-8):   ObsÅ‚uga apletÃ³w dla perl-gnome
 Group:		Development/Languages/Perl
 Requires:	perl-gnome = %{version}
 
 %description -n perl-gnome-Applet
 Gnome::Applet module - applets support for perl-gnome.
 
-%description -n perl-gnome-Applet -l pl
-Modu³ Gnome::Applet - obs³uga apletów dla perl-gnome.
+%description -n perl-gnome-Applet -l pl.UTF-8
+ModuÅ‚ Gnome::Applet - obsÅ‚uga apletÃ³w dla perl-gnome.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
