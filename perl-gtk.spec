@@ -1,11 +1,6 @@
 #
 # TODO: GtkHTML, Bonobo and Mozilla (don't build now - need fixes or API update)
 #
-%{?_without_gnomeall:%global	_without_gnome		1}
-%{?_without_gnomeall:%global	_without_gtkxmhtml	1}
-%{?_without_gnome:%global	_without_applets	1}
-%{?_without_gnome:%global	_without_gnomeprint	1}
-#
 # Conditional build:
 %bcond_with	tests		# perform "make test" (require valid DISPLAY)
 %bcond_with	gtkhtml		# build Gtk::HTML module (gtkhtml library)
@@ -18,6 +13,16 @@
 %bcond_without	gnomeprint	# don't build Gnome::Print module (gnome-print library)
 %bcond_without	gtkglarea	# don't build Gtk::GLArea module (gtkglarea library)
 %bcond_without	gtkxmhtml	# don't build Gtk::XmHTML module (gtkxmhtml library)
+#
+%if ! %{with gnomeall}
+%undefine	with_gnome
+%undefine	with_gtkxmhtml
+%endif
+#
+%if ! %{with gnome}
+%undefine	with_applets
+%undefine	with_gnomeprint
+%endif
 #
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	Gtk
@@ -39,7 +44,7 @@ Summary(sl.UTF-8):	Perlovske razširitve za GTK+ (Gimp ToolKit)
 Summary(sv.UTF-8):	Perl-utvidgning för GTK+ (the Gimp ToolKit)
 Name:		perl-gtk
 Version:	0.7009
-Release:	3
+Release:	4
 # same as perl or LGPL
 License:	LGPL or GPL v1+ or Artistic
 Group:		Development/Languages/Perl
