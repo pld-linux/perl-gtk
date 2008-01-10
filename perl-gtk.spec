@@ -308,6 +308,7 @@ Moduł Gnome::Applet - obsługa apletów dla perl-gnome.
 %{!?with_applets:	--without-applets}	%{?with_applets:	--with-applets-force}
 
 %{__make} \
+	CC="%{__cc}" \
 	OPTIMIZE="%{rpmcflags}"
 
 %{?with_tests:%{__make} test}
