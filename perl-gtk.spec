@@ -44,7 +44,7 @@ Summary(sl.UTF-8):	Perlovske razširitve za GTK+ (Gimp ToolKit)
 Summary(sv.UTF-8):	Perl-utvidgning för GTK+ (the Gimp ToolKit)
 Name:		perl-gtk
 Version:	0.7009
-Release:	6
+Release:	7
 # same as perl or LGPL
 License:	LGPL or GPL v1+ or Artistic
 Group:		Development/Languages/Perl
