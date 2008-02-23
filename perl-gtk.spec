@@ -14,12 +14,12 @@
 %bcond_without	gtkglarea	# don't build Gtk::GLArea module (gtkglarea library)
 %bcond_without	gtkxmhtml	# don't build Gtk::XmHTML module (gtkxmhtml library)
 #
-%if ! %{with gnomeall}
+%if %{without gnomeall}
 %undefine	with_gnome
 %undefine	with_gtkxmhtml
 %endif
 #
-%if ! %{with gnome}
+%if %{without gnome}
 %undefine	with_applets
 %undefine	with_gnomeprint
 %endif
@@ -44,7 +44,7 @@ Summary(sl.UTF-8):	Perlovske razširitve za GTK+ (Gimp ToolKit)
 Summary(sv.UTF-8):	Perl-utvidgning för GTK+ (the Gimp ToolKit)
 Name:		perl-gtk
 Version:	0.7009
-Release:	7
+Release:	8
 # same as perl or LGPL
 License:	LGPL or GPL v1+ or Artistic
 Group:		Development/Languages/Perl
