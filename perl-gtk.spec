@@ -65,6 +65,9 @@ BuildRequires:	gtk+-devel >= 1.2.0
 %{?with_gtkxmhtml:BuildRequires:	gtkxmhtml-devel}
 %{?with_gdkimlib:BuildRequires:	imlib-devel}
 %{?with_glade:BuildRequires:	libglade-devel < 1:1.99}
+# not sure if no bcond for that dep below is needed
+# but without that build fails on missing X11/Intristic.h
+BuildRequires:	xorg-lib-libXt-devel
 BuildRequires:	perl-XML-Parser
 BuildRequires:	perl-XML-Writer
 BuildRequires:	perl-devel >= 1:5.8.0
