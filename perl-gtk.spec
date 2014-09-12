@@ -335,7 +335,6 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_vendorarch}/Gtk/Gdk.pm
 %dir %{perl_vendorarch}/Gtk/Gdk
 %dir %{perl_vendorarch}/auto/Gtk
-%{perl_vendorarch}/auto/Gtk/Gtk.bs
 %{perl_vendorarch}/auto/Gtk/autosplit.ix
 %attr(755,root,root) %{perl_vendorarch}/auto/Gtk/Gtk.so
 %dir %{perl_vendorarch}/auto/Gtk/Gdk
@@ -349,7 +348,6 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_vendorarch}/Gtk/Gdk/ImlibImage.pm
 %{perl_vendorarch}/Gtk/Gdk/ImlibImage
 %dir %{perl_vendorarch}/auto/Gtk/Gdk/ImlibImage
-%{perl_vendorarch}/auto/Gtk/Gdk/ImlibImage/ImlibImage.bs
 %attr(755,root,root) %{perl_vendorarch}/auto/Gtk/Gdk/ImlibImage/ImlibImage.so
 %{_mandir}/man3/Gtk::Gdk::ImlibImage*
 %endif
@@ -360,7 +358,6 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_vendorarch}/Gtk/Gdk/Pixbuf.pm
 %{perl_vendorarch}/Gtk/Gdk/Pixbuf
 %dir %{perl_vendorarch}/auto/Gtk/Gdk/Pixbuf
-%{perl_vendorarch}/auto/Gtk/Gdk/Pixbuf/Pixbuf.bs
 %attr(755,root,root) %{perl_vendorarch}/auto/Gtk/Gdk/Pixbuf/Pixbuf.so
 %{_mandir}/man3/Gtk::Gdk::Pixbuf*
 %endif
@@ -371,7 +368,6 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_vendorarch}/Gtk/GLArea.pm
 %{perl_vendorarch}/Gtk/GLArea
 %dir %{perl_vendorarch}/auto/Gtk/GLArea
-%{perl_vendorarch}/auto/Gtk/GLArea/GLArea.bs
 %attr(755,root,root) %{perl_vendorarch}/auto/Gtk/GLArea/GLArea.so
 %dir %{perl_vendorarch}/auto/Gtk/GLArea/Constants
 %{perl_vendorarch}/auto/Gtk/GLArea/Constants/autosplit.ix
@@ -384,7 +380,6 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_vendorarch}/Gtk/GladeXML
 %dir %{perl_vendorarch}/auto/Gtk/GladeXML
 %{perl_vendorarch}/auto/Gtk/GladeXML/autosplit.ix
-%{perl_vendorarch}/auto/Gtk/GladeXML/GladeXML.bs
 %attr(755,root,root) %{perl_vendorarch}/auto/Gtk/GladeXML/GladeXML.so
 %{_mandir}/man3/Gtk::GladeXML*
 %endif
@@ -395,7 +390,6 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_vendorarch}/Gtk/XmHTML.pm
 %{perl_vendorarch}/Gtk/XmHTML
 %dir %{perl_vendorarch}/auto/Gtk/XmHTML
-%{perl_vendorarch}/auto/Gtk/XmHTML/*.bs
 %attr(755,root,root) %{perl_vendorarch}/auto/Gtk/XmHTML/*.so
 %endif
 
@@ -405,7 +399,6 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_vendorarch}/Gtk/HTML.pm
 %{perl_vendorarch}/Gtk/HTML
 %dir %{perl_vendorarch}/auto/Gtk/HTML
-%{perl_vendorarch}/auto/Gtk/HTML/*.bs
 %attr(755,root,root) %{perl_vendorarch}/auto/Gtk/HTML/*.so
 %endif
 
@@ -416,7 +409,6 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{perl_vendorarch}/Gnome
 %{perl_vendorarch}/Gnome/[IT]*
 %dir %{perl_vendorarch}/auto/Gnome
-%{perl_vendorarch}/auto/Gnome/Gnome.bs
 %attr(755,root,root) %{perl_vendorarch}/auto/Gnome/Gnome.so
 %{_mandir}/man3/Gnome.3pm*
 %{_mandir}/man3/Gnome::reference.3pm*
@@ -428,7 +420,6 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_vendorarch}/Gnome/Print.pm
 %{perl_vendorarch}/Gnome/Print
 %dir %{perl_vendorarch}/auto/Gnome/Print
-%{perl_vendorarch}/auto/Gnome/Print/Print.bs
 %attr(755,root,root) %{perl_vendorarch}/auto/Gnome/Print/Print.so
 %{_mandir}/man3/Gnome::Print*
 %endif
@@ -439,7 +430,6 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_vendorarch}/Gnome/Applet.pm
 %{perl_vendorarch}/Gnome/Applet
 %dir %{perl_vendorarch}/auto/Gnome/Applet
-%{perl_vendorarch}/auto/Gnome/Applet/*.bs
 %attr(755,root,root) %{perl_vendorarch}/auto/Gnome/Applet/*.so
 %{_mandir}/man3/Gnome::Applet*
 %endif
