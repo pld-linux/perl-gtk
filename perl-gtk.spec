@@ -24,7 +24,6 @@
 %undefine	with_gnomeprint
 %endif
 #
-%include	/usr/lib/rpm/macros.perl
 %define		pdir	Gtk
 %define		pnam	Perl
 Summary:	Perl extensions for GTK+ (the Gimp ToolKit)
